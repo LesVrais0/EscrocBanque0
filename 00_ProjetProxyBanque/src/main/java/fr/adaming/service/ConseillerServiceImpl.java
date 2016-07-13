@@ -19,7 +19,7 @@ public class ConseillerServiceImpl implements IConseillerService {
 	@Override
 	@Transactional
 	public void ajouterClientService(Client client) {
-		
+		//test
 		conseillerDao.ajouterClientDao(client);
 		
 	}

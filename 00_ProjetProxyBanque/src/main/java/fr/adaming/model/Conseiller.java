@@ -3,13 +3,20 @@
  */
 package fr.adaming.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
  * @author INTI-0288
  *
  */
-public class Conseiller extends Client {
+@Entity(name="conseillerEntity")
+@Table(name="conseillers")
+@MappedSuperclass
+public class Conseiller extends Personne {
 
 	
 	/**
@@ -17,13 +24,25 @@ public class Conseiller extends Client {
 	 */
 	@Transient
 	private static final long serialVersionUID = 199658589657L;
-
+	@Column
+	private String password;
+	
 	/**
 	 * 
 	 */
 	public Conseiller() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param telephone
+	 * @param password
+	 */
+	public Conseiller(String nom, String prenom, String telephone, String password) {
+		super(nom, prenom, telephone);
+		this.password = password;
 	}
 
 	/**
@@ -31,20 +50,25 @@ public class Conseiller extends Client {
 	 * @param nom
 	 * @param prenom
 	 * @param telephone
+	 * @param password
 	 */
-	public Conseiller(int id, String nom, String prenom, String telephone) {
+	public Conseiller(int id, String nom, String prenom, String telephone, String password) {
 		super(id, nom, prenom, telephone);
-		// TODO Auto-generated constructor stub
+		this.password = password;
 	}
 
 	/**
-	 * @param nom
-	 * @param prenom
-	 * @param telephone
+	 * @return the password
 	 */
-	public Conseiller(String nom, String prenom, String telephone) {
-		super(nom, prenom, telephone);
-		// TODO Auto-generated constructor stub
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/* (non-Javadoc)
@@ -52,10 +76,8 @@ public class Conseiller extends Client {
 	 */
 	@Override
 	public String toString() {
-		return "Conseiller [getAdresse()=" + getAdresse() + ", getCodePostal()=" + getCodePostal() + ", getVille()="
-				+ getVille() + ", toString()=" + super.toString() + ", getId()=" + getId() + ", getNom()=" + getNom()
-				+ ", getPrenom()=" + getPrenom() + ", getTelephone()=" + getTelephone() + "]";
+		return "Conseiller [password=" + password + "]";
 	}
-
+	
 	
 }

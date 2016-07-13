@@ -3,13 +3,18 @@
  */
 package fr.adaming.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
  * @author INTI-0288
  *
  */
-public class Gerant extends Client{
+@Entity(name="gerantEntity")
+@Table(name="gerants")
+public class Gerant extends Conseiller{
 
 	
 	/**
@@ -17,25 +22,25 @@ public class Gerant extends Client{
 	 */
 	@Transient
 	private static final long serialVersionUID = 12L;
-	
+	@Column
 	private String agence;
 
 	/**
-	 * @param agence
+	 * 
 	 */
 	public Gerant() {
 		super();
-		
 	}
 
 	/**
 	 * @param nom
 	 * @param prenom
 	 * @param telephone
+	 * @param password
 	 * @param agence
 	 */
-	public Gerant(String nom, String prenom, String telephone, String agence) {
-		super(nom, prenom, telephone);
+	public Gerant(String nom, String prenom, String telephone, String password, String agence) {
+		super(nom, prenom, telephone, password);
 		this.agence = agence;
 	}
 
@@ -44,10 +49,11 @@ public class Gerant extends Client{
 	 * @param nom
 	 * @param prenom
 	 * @param telephone
+	 * @param password
 	 * @param agence
 	 */
-	public Gerant(int id, String nom, String prenom, String telephone, String agence) {
-		super(id, nom, prenom, telephone);
+	public Gerant(int id, String nom, String prenom, String telephone, String password, String agence) {
+		super(id, nom, prenom, telephone, password);
 		this.agence = agence;
 	}
 
@@ -72,10 +78,8 @@ public class Gerant extends Client{
 	public String toString() {
 		return "Gerant [agence=" + agence + "]";
 	}
-	
-	
-	
 
 	
+
 
 }

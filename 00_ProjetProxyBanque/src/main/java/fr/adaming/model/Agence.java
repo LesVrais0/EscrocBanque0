@@ -3,14 +3,25 @@
  */
 package fr.adaming.model;
 
+import javax.persistence.Column;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
 /**
  * @author INTI-0288
  *
  */
-public class Agence {
 
+public class Agence {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@Column
 	private String ville;
+	@Column
 	private String dateOuverture;
 	/**
 	 * 

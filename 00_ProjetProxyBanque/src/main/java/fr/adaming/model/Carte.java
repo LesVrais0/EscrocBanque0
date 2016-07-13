@@ -5,6 +5,9 @@ package fr.adaming.model;
 
 import java.io.Serializable;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
 
@@ -12,6 +15,7 @@ import javax.persistence.Transient;
  * @author INTI-0288
  *
  */
+
 @MappedSuperclass
 public abstract class Carte implements Serializable{
 	
@@ -20,7 +24,8 @@ public abstract class Carte implements Serializable{
 	 */
 	@Transient
 	private static final long serialVersionUID = 1123L;
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
 	/**

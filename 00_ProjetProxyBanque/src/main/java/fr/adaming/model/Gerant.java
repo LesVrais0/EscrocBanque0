@@ -3,8 +3,11 @@
  */
 package fr.adaming.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -25,6 +28,8 @@ public class Gerant extends Conseiller{
 	@Column
 	private String agence;
 
+	@OneToMany(mappedBy="gerants")
+	private List<Conseiller> conseillers;
 	/**
 	 * 
 	 */

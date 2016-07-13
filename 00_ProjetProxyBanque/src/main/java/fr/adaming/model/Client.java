@@ -1,7 +1,11 @@
 package fr.adaming.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -25,6 +29,18 @@ public class Client extends Personne{
 	private int codePostal;
 	@Column
 	private String ville;
+	
+	
+	@ManyToOne()
+	@JoinColumn(name="conseiller_id_fk", referencedColumnName="id")
+	private Conseiller conseillers;
+	
+	@OneToOne(mappedBy="conseillerClientCC", cascade = CascadeType.ALL)
+	private CompteCourant comptesCourants;
+	
+	@OneToOne(mappedBy="conseillerClientCE", cascade = CascadeType.ALL)
+	private CompteEpargne comptesEpargnes;
+	
 	/**
 	 * 
 	 */

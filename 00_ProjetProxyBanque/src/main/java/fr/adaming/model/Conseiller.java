@@ -3,9 +3,15 @@
  */
 package fr.adaming.model;
 
+import java.util.List;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -13,12 +19,11 @@ import javax.persistence.Transient;
  * @author INTI-0288
  *
  */
-@Entity(name="conseillerEntity")
-@Table(name="conseillers")
+@Entity(name = "conseillerEntity")
+@Table(name = "conseillers")
 @MappedSuperclass
 public class Conseiller extends Personne {
 
-	
 	/**
 	 * 
 	 */
@@ -26,7 +31,14 @@ public class Conseiller extends Personne {
 	private static final long serialVersionUID = 199658589657L;
 	@Column
 	private String password;
-	
+
+	@ManyToOne()
+	@JoinColumn(name = "gerant_id_fk", referencedColumnName = "id")
+	private Gerant gerants;
+
+	@OneToMany(mappedBy = "conseillers")
+	private List<Client> clients;
+
 	/**
 	 * 
 	 */
@@ -65,19 +77,21 @@ public class Conseiller extends Personne {
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param password
+	 *            the password to set
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
 		return "Conseiller [password=" + password + "]";
 	}
-	
-	
+
 }

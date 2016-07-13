@@ -5,7 +5,10 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -22,7 +25,16 @@ public class CompteEpargne extends Compte{
 	 */
 	@Transient
 	private static final long serialVersionUID = 1894651328794561L;
-
+	
+	@OneToOne
+	@JoinColumn(name = "comptesEpargne", referencedColumnName = "id")
+	private Client clients;
+	
+	@OneToOne(mappedBy="CompteEpargneCarteVisa", cascade = CascadeType.ALL)
+	private CarteVisa cartesVisa;
+	
+	@OneToOne(mappedBy="CompteEpargneCarteElectron", cascade = CascadeType.ALL)
+	private CarteElectron cartesElectron;
 	/**
 	 * 
 	 */

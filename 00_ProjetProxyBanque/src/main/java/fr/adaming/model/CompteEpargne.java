@@ -5,12 +5,16 @@ package fr.adaming.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
  * @author INTI-0288
  *
  */
+@Entity(name="compteEpargneEntity")
+@Table(name="comptesEpargnes")
 public class CompteEpargne extends Compte{
 
 	/**

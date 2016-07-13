@@ -1,7 +1,16 @@
 package fr.adaming.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
+/**
+ * @author INTI-0288
+ *
+ */
+@Entity(name="clientEntity")
+@Table(name="clients")
 public class Client extends Personne{
 
 	
@@ -10,8 +19,11 @@ public class Client extends Personne{
 	 */
 	@Transient
 	private static final long serialVersionUID = 1795212547963852L;
+	@Column
 	private String adresse;
+	@Column
 	private int codePostal;
+	@Column
 	private String ville;
 	/**
 	 * 
@@ -21,23 +33,33 @@ public class Client extends Personne{
 		// TODO Auto-generated constructor stub
 	}
 	/**
+	 * @param nom
+	 * @param prenom
+	 * @param telephone
+	 * @param adresse
+	 * @param codePostal
+	 * @param ville
+	 */
+	public Client(String nom, String prenom, String telephone, String adresse, int codePostal, String ville) {
+		super(nom, prenom, telephone);
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.ville = ville;
+	}
+	/**
 	 * @param id
 	 * @param nom
 	 * @param prenom
 	 * @param telephone
+	 * @param adresse
+	 * @param codePostal
+	 * @param ville
 	 */
-	public Client(int id, String nom, String prenom, String telephone) {
+	public Client(int id, String nom, String prenom, String telephone, String adresse, int codePostal, String ville) {
 		super(id, nom, prenom, telephone);
-		// TODO Auto-generated constructor stub
-	}
-	/**
-	 * @param nom
-	 * @param prenom
-	 * @param telephone
-	 */
-	public Client(String nom, String prenom, String telephone) {
-		super(nom, prenom, telephone);
-		// TODO Auto-generated constructor stub
+		this.adresse = adresse;
+		this.codePostal = codePostal;
+		this.ville = ville;
 	}
 	/**
 	 * @return the adresse
@@ -75,13 +97,7 @@ public class Client extends Personne{
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Client [adresse=" + adresse + ", codePostal=" + codePostal + ", ville=" + ville + "]";
-	}
+	
 	
 	
 }

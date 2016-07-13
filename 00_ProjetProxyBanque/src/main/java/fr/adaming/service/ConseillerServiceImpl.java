@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.dao.IConseillerDao;
@@ -11,6 +12,7 @@ import fr.adaming.model.Client;
 import fr.adaming.model.Compte;
 import fr.adaming.model.Conseiller;
 
+@Service
 public class ConseillerServiceImpl implements IConseillerService {
 
 	@Autowired

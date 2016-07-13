@@ -78,7 +78,7 @@ public class ManagedConseiller {
 		if (listeClient.size() < 10) {
 			
 			
-			//client.setConseiller(conseiller);
+			client.setConseillers(conseiller);
 			
 			conseillerService.ajouterClientService(client);
 

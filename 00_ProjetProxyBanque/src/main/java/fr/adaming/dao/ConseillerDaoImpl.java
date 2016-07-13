@@ -16,8 +16,7 @@ import fr.adaming.model.Conseiller;
 @Repository
 public class ConseillerDaoImpl implements IConseillerDao {
 
-	// -----------------------Session
-	// Factory------------------------------------
+	// -----------------------SessionFactory------------------------------------
 	@Autowired
 	private SessionFactory sessionFactory;
 

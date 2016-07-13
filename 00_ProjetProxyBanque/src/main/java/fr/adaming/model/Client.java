@@ -113,6 +113,43 @@ public class Client extends Personne{
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
+	/**
+	 * @return the conseillers
+	 */
+	public Conseiller getConseillers() {
+		return conseillers;
+	}
+	/**
+	 * @param conseillers the conseillers to set
+	 */
+	public void setConseillers(Conseiller conseillers) {
+		this.conseillers = conseillers;
+	}
+	/**
+	 * @return the comptesCourants
+	 */
+	public CompteCourant getComptesCourants() {
+		return comptesCourants;
+	}
+	/**
+	 * @param comptesCourants the comptesCourants to set
+	 */
+	public void setComptesCourants(CompteCourant comptesCourants) {
+		this.comptesCourants = comptesCourants;
+	}
+	/**
+	 * @return the comptesEpargnes
+	 */
+	public CompteEpargne getComptesEpargnes() {
+		return comptesEpargnes;
+	}
+	/**
+	 * @param comptesEpargnes the comptesEpargnes to set
+	 */
+	public void setComptesEpargnes(CompteEpargne comptesEpargnes) {
+		this.comptesEpargnes = comptesEpargnes;
+	}
+
 	
 	
 	

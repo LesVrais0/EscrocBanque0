@@ -4,7 +4,7 @@ import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
 
-public interface IGérantDao {
+public interface IGerantDao {
 
 	public Gerant getGerantDao(String nom, String password);
 	

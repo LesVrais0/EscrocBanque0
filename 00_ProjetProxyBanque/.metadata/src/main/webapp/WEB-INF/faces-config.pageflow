@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14683954414600" configfile="/00_ProjetProxyBanque/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="presentation.xhtml" id="pf14684033808520" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14684033808521 pf14684033919973" path="/ajout.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="SuccesAjout.xhtml" id="pf14684033808532" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14684033808521" path="/succesAjout.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="EchecAjout.xhtml" id="pf14684033919974" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14684033919973" path="/echecAjout.xhtml"/>
-  <links id="pf14684033808521" target="pf14684033808532" source="pf14684033808520" outcome="succesajout"/>
-  <links id="pf14684033919973" target="pf14684033919974" source="pf14684033808520" outcome="echecajout"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14687546024380" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14687546024381" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="succes.xhtml" id="pf14687546024382" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14687546024381" path="/succes.xhtml"/>
+  <links id="pf14687546024381" target="pf14687546024382" source="pf14687546024380" outcome="succes"/>
 </pageflow:Pageflow>

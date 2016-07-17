@@ -27,26 +27,31 @@ public class GerantDaoImpl implements IGerantDao {
 
 	@Override
 	public Gerant getGerantDao(String nom, String password) {
-
+		// TODO Auto-generated method stub
+			return null;
 	}
 
 	@Override
 	public void ajouterConseillerDao(Conseiller conseiller) {
+		
+		System.out.println("dao gerant");
 		Session session = sessionFactory.openSession();
+		System.out.println("dao gerant2");
 		session.save(conseiller);
+		System.out.println("dao gerant3");
 		session.close();
 		
 		
 	}
 
 	@Override
-	public void modifierConseillerDao(Conseiller Conseiller) {
+	public void modifierConseillerDao(Conseiller conseiller) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void supprimerConseillerDao(Conseiller Conseiller) {
+	public void supprimerConseillerDao(Conseiller conseiller) {
 		// TODO Auto-generated method stub
 		
 	}

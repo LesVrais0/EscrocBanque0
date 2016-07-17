@@ -1,12 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>LesVrais</groupId>
-  <artifactId>00_ProjetProxyBanque</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  
-  <properties>
-		
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>salle_jardin</groupId>
+	<artifactId>13_integration_jsf_spring_hibernate</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>jsfSpringHibernate</name>
+
+	<properties>
 		<spring.version>4.1.5.RELEASE</spring.version>
 		<hibernate.version>4.3.8.Final</hibernate.version>
 		<mysql.driver.version>5.1.38</mysql.driver.version>
@@ -30,12 +31,12 @@
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
-			<version>2.1.11</version>
+			<version>2.2.10</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-impl</artifactId>
-			<version>2.1.11</version>
+			<version>2.2.10</version>
 		</dependency>
 
 
@@ -202,16 +203,16 @@
 			<artifactId>commons-pool</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
-		
-		
-<!-- *****************ajoutées***************** -->
+
+
+
+		<!-- *****************ajoutées***************** -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>4.1.5.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
@@ -231,8 +232,9 @@
 
 
 
-	
-		<build>
+
+
+	<build>
 		<finalName>ProxyBanque</finalName>
 		<plugins>
 			<plugin>

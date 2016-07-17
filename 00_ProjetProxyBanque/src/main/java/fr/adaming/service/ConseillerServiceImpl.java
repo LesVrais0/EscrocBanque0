@@ -12,7 +12,7 @@ import fr.adaming.model.Client;
 import fr.adaming.model.Compte;
 import fr.adaming.model.Conseiller;
 
-@Service
+@Service("cService")
 public class ConseillerServiceImpl implements IConseillerService {
 
 	@Autowired
@@ -20,10 +20,10 @@ public class ConseillerServiceImpl implements IConseillerService {
 	
 	@Override
 	@Transactional
-	public void ajouterClientService(Client client) {
-		//test
-		conseillerDao.ajouterClientDao(client);
+	public String ajouterClientService(Client client) {
 		
+		conseillerDao.ajouterClientDao(client);
+		return "succes";
 	}
 
 	@Override
@@ -68,5 +68,6 @@ public class ConseillerServiceImpl implements IConseillerService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }

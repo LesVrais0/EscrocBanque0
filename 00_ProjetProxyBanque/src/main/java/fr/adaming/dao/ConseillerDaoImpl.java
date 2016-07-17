@@ -3,6 +3,7 @@ package fr.adaming.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,22 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	public void ajouterClientDao(Client client) {
 		Session session = sessionFactory.openSession();
 		
-		session.save(client);
+		String sql ="insert into clients (nom, prenom, telephone, adresse, codePostal, ville) values (?, ?, ?, ?, ?, ?)";
 		
+		Query requete= session.createSQLQuery(sql);
+		
+		requete.setParameter(0, client.getNom());
+		requete.setParameter(1, client.getPrenom());
+		requete.setParameter(2, client.getTelephone());
+		requete.setParameter(3, client.getAdresse());
+		requete.setParameter(4, client.getCodePostal());
+		requete.setParameter(5, client.getVille());
+		
+		int i = requete.executeUpdate();
+		System.out.println("Valeur de i = "+i);
+		System.out.println("Le client qu'on essaie de creer");
+		System.out.println(client);
+		System.out.println("Fin");
 		session.close();
 
 	}

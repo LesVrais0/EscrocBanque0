@@ -2,14 +2,15 @@ package fr.adaming.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import fr.adaming.dao.GerantDaoImpl;
 import fr.adaming.dao.IGerantDao;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
 public class GerantServiceImpl implements IGerantService {
 
-	@Autowired
-	IGerantDao gerantDao;
+	//@Autowired
+	IGerantDao gerantDao = new GerantDaoImpl();
 	
 	@Override
 	public Gerant getGerantService(String nom, String password) {
@@ -18,8 +19,9 @@ public class GerantServiceImpl implements IGerantService {
 	}
 
 	@Override
-	public void ajouterConseillerService(Conseiller Conseiller) {
-		gerantDao.ajouterConseillerDao(Conseiller);
+	public void ajouterConseillerService(Conseiller conseiller) {
+		System.out.println("Service gerant");
+		gerantDao.ajouterConseillerDao(conseiller);
 	}
 
 	@Override

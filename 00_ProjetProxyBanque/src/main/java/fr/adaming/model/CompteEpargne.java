@@ -30,10 +30,10 @@ public class CompteEpargne extends Compte{
 	@JoinColumn(name = "comptesEpargne", referencedColumnName = "id")
 	private Client clients;
 	
-	@OneToOne(mappedBy="CompteEpargneCarteVisa", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="comptesEpargnes", cascade = CascadeType.ALL)
 	private CarteVisa cartesVisa;
 	
-	@OneToOne(mappedBy="CompteEpargneCarteElectron", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="comptesEpargnes", cascade = CascadeType.ALL)
 	private CarteElectron cartesElectron;
 	/**
 	 * 

@@ -4,26 +4,20 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 
-	<application>
-		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-	</application>
+    <application>
+        <el-resolver>
+            org.springframework.web.jsf.el.SpringBeanFacesELResolver
+        </el-resolver>
+</application>
 
 
-	<navigation-rule>
-		<from-view-id>/ajout.xhtml</from-view-id>
+<navigation-rule>
+<from-view-id>/*</from-view-id>
+<navigation-case>
+<from-outcome>succes</from-outcome>
+<to-view-id>/succes.xhtml</to-view-id>
+</navigation-case>
+</navigation-rule>
 
-		<navigation-case>
-			<from-outcome>succesajout</from-outcome>
-			<to-view-id>/succesAjout.xhtml</to-view-id>
-		</navigation-case>
-
-		<navigation-case>
-			<from-outcome>echecajout</from-outcome>
-			<to-view-id>/echecAjout.xhtml</to-view-id>
-		</navigation-case>
-
-	</navigation-rule>
-
-
-
+	
 </faces-config>

@@ -35,10 +35,10 @@ public class Client extends Personne{
 	@JoinColumn(name="conseiller_id_fk", referencedColumnName="id")
 	private Conseiller conseillers;
 	
-	@OneToOne(mappedBy="conseillerClientCC", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="clients", cascade = CascadeType.ALL)
 	private CompteCourant comptesCourants;
 	
-	@OneToOne(mappedBy="conseillerClientCE", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy="clients", cascade = CascadeType.ALL)
 	private CompteEpargne comptesEpargnes;
 	
 	/**
@@ -148,6 +148,14 @@ public class Client extends Personne{
 	 */
 	public void setComptesEpargnes(CompteEpargne comptesEpargnes) {
 		this.comptesEpargnes = comptesEpargnes;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Client [adresse=" + adresse + ", codePostal=" + codePostal
+				+ ", ville=" + ville + "Nom" +super.getNom() +"]";
 	}
 
 	

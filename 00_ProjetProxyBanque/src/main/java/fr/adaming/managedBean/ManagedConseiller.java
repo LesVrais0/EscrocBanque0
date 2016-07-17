@@ -3,15 +3,22 @@ package fr.adaming.managedBean;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
+
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import fr.adaming.model.Client;
 import fr.adaming.model.Conseiller;
+import fr.adaming.service.ConseillerServiceImpl;
 import fr.adaming.service.IConseillerService;
 
-@ManagedBean(name="MBConseiller")
+@ManagedBean(name="mBConseiller")
 @SessionScoped
 public class ManagedConseiller {
 
@@ -21,7 +28,7 @@ public class ManagedConseiller {
 
 	private List<Client> listeClient;
 
-	@Autowired//il faiut le changer avec ManagedProperty
+	@ManagedProperty(value="#{cService}")//il faut le changer avec ManagedProperty
 	private IConseillerService conseillerService;
 
 	// --------------------------------------------------------------------------------
@@ -30,7 +37,9 @@ public class ManagedConseiller {
 	 * 
 	 */
 	public ManagedConseiller() {
-		super();
+		//this.conseillerService=new ConseillerServiceImpl();
+		this.client=new Client();
+		this.conseiller=new Conseiller();
 	}
 
 	public Conseiller getConseiller() {
@@ -72,22 +81,12 @@ public class ManagedConseiller {
 	}
 
 	public String ajouterClient() {
-
-		listeClient = conseillerService.getAllClientsService();
-
-		if (listeClient.size() < 10) {
 			
-			
-			client.setConseillers(conseiller);
-			
-			conseillerService.ajouterClientService(client);
+			return conseillerService.ajouterClientService(client);
 
-			return "succesajout";
-
-		} else {
-			
-			return "echecajout";
-		}
 	}
+
+	
+	
 
 }

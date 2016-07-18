@@ -97,10 +97,24 @@ public class ManagedConseiller {
 	
 	}
 	
-	public String verifierConseiller(){
+	public String LoginConseiller(){
 		
-		return null;
+		int i = conseillerService.verifConseilerService(conseiller);
 		
-		
+		if(i==1){
+			
+			Conseiller conseiller1 = conseillerService.getConseillerService(conseiller);
+			
+			conseiller = conseiller1;
+			
+			return "succesCo";
+			
+		}else{
+			
+			return "echecCo";
+			
+		}
+	
+
 	}
 }

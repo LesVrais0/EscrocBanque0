@@ -143,7 +143,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		Session session = sessionFactory.openSession();
 		
-		String sql = "FROM conseillerEntity ce WHERE ce.nom = :nomp , ce.password = :passwordp";
+		String sql = "FROM conseillerEntity ce WHERE ce.nom = :nomp and ce.password = :passwordp";
 		
 		Query requete = session.createQuery(sql);
 		

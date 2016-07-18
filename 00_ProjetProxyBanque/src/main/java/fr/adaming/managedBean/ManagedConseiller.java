@@ -74,7 +74,7 @@ public class ManagedConseiller {
 		this.conseillerService = conseillerService;
 	}
 
-	// ---------------------------------Getter Setter Constructeur-----------------------------------------------------------------End
+	// ---------------------------------Getter Setter Constructeur-----------------------------------------------------------------TestEnd
 
 	public Conseiller getConseiller(String nom, String password) {
 		return conseiller;

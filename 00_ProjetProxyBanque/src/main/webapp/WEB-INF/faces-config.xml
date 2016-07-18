@@ -19,5 +19,20 @@
 </navigation-case>
 </navigation-rule>
 
+<navigation-rule>
+<from-view-id>/login.xhtml</from-view-id>
+
+<navigation-case>
+<from-outcome>succesCo</from-outcome>
+<to-view-id>/presentation.xhtml</to-view-id>
+</navigation-case>
+
+<navigation-case>
+<from-outcome>echecCo</from-outcome>
+<to-view-id>/login.xhtml</to-view-id>
+</navigation-case>
+
+</navigation-rule>
+
 	
 </faces-config>

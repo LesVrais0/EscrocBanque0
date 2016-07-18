@@ -17,7 +17,7 @@ public interface IConseillerService {
 	
 	public Client lireClientService(Client client);
 	
-	public List<Client> getAllClientsService ();
+	public List<Client> getAllClientsService (Conseiller conseiller);
 	
 	public void faireVirementService(HashMap<String , ? extends Compte> mapCompte, double montant);
 	

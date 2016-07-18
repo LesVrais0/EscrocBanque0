@@ -45,15 +45,15 @@ public class ConseillerServiceImpl implements IConseillerService {
 	@Override
 	@Transactional
 	public Client lireClientService(Client client) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return conseillerDao.lireClientDao(client);
 	}
 
 	@Override
 	@Transactional
-	public List<Client> getAllClientsService() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Client> getAllClientsService(Conseiller conseiller) {
+
+		return conseillerDao.getAllClientsDao(conseiller);
 	}
 
 	@Override

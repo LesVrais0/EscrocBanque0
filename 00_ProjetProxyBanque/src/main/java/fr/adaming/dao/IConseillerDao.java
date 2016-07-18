@@ -18,7 +18,7 @@ public interface IConseillerDao {
 	
 	public Client lireClientDao(Client client);
 	
-	public List<Client> getAllClientsDao ();
+	public List<Client> getAllClientsDao (Conseiller conseiller);
 	
 	public void faireVirementDao(HashMap<String , ? extends Compte> mapCompte, double montant);
 	

@@ -96,15 +96,37 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	@Transactional
 	public Client lireClientDao(Client client) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql ="FROM clientEntity ce where ce.nom = :nomp , ce.prenom = :prenomp , ce.ville = :villep";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("nomp", client.getNom());
+		requete.setParameter("prenomp", client.getPrenom());
+		requete.setParameter("villep", client.getVille());
+		
+		Client cl = (Client) requete.uniqueResult();
+		
+		return cl;
 	}
 
 	@Override
 	@Transactional
-	public List<Client> getAllClientsDao() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Client> getAllClientsDao(Conseiller conseiller) {
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM clientEntity ce where ce.conseiller_id_fk = :idconseillerp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idconseillerp", conseiller.getId());
+		
+		List<Client> liste = requete.list();
+		
+		return liste;
 	}
 
 	@Override

@@ -24,6 +24,7 @@ public interface IConseillerDao {
 	
 	public Conseiller getConseillerDao(Conseiller conseiller);
 	
+	public int verifConseillerDao(Conseiller conseiller);
 	
 
 }

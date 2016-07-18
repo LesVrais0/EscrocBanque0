@@ -22,4 +22,6 @@ public interface IConseillerService {
 	public void faireVirementService(HashMap<String , ? extends Compte> mapCompte, double montant);
 	
 	public Conseiller getConseillerService(Conseiller conseiller);
+	
+	public int verifConseilerService(Conseiller conseiller);
 }

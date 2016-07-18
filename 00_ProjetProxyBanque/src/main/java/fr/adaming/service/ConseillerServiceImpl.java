@@ -71,6 +71,12 @@ public class ConseillerServiceImpl implements IConseillerService {
 		return conseillerDao.getConseillerDao(conseiller);
 		
 	}
+
+	@Override
+	public int verifConseilerService(Conseiller conseiller) {
+
+		return conseillerDao.verifConseillerDao(conseiller);
+	}
 	
 
 }

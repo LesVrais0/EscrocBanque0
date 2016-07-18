@@ -99,7 +99,8 @@ public class ManagedConseiller {
 	
 	public String verifierConseiller(){
 		
-		
 		return null;
+		
+		
 	}
 }

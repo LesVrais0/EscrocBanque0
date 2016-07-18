@@ -139,9 +139,18 @@ public class ConseillerDaoImpl implements IConseillerDao {
 
 	@Override
 	@Transactional
-	public Conseiller getConseillerDao(String nom, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public Conseiller getConseillerDao(Conseiller conseiller) {
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM conseillerEntity ce WHERE ce.nom = :nomp , ce.password = :passwordp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("nomp", conseiller.getNom());
+		requete.setParameter("passwordp", conseiller.getPassword());
+
+		return (Conseiller) requete.uniqueResult();
 	}
 
 }

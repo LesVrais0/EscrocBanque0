@@ -37,9 +37,9 @@ public class ConseillerServiceImpl implements IConseillerService {
 
 	@Override
 	@Transactional
-	public void supprimerClientService(Client client) {
-		// TODO Auto-generated method stub
-		
+	public String supprimerClientService(Client client) {
+		conseillerDao.supprimerClientDao(client);
+		return "succes";
 	}
 
 	@Override
@@ -66,9 +66,9 @@ public class ConseillerServiceImpl implements IConseillerService {
 
 	@Override
 	@Transactional
-	public Conseiller getConseillerService(String nom, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public Conseiller getConseillerService(Conseiller conseiller) {
+		
+		return conseillerDao.getConseillerDao(conseiller);
 	}
 	
 

@@ -13,7 +13,7 @@ public interface IConseillerService {
 	
 	public String modifierClientService(Client client);
 	
-	public void supprimerClientService(Client client);
+	public String supprimerClientService(Client client);
 	
 	public Client lireClientService(Client client);
 	
@@ -21,5 +21,5 @@ public interface IConseillerService {
 	
 	public void faireVirementService(HashMap<String , ? extends Compte> mapCompte, double montant);
 	
-	public Conseiller getConseillerService(String nom, String password);
+	public Conseiller getConseillerService(Conseiller conseiller);
 }

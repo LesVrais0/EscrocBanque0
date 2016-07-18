@@ -22,7 +22,7 @@ public interface IConseillerDao {
 	
 	public void faireVirementDao(HashMap<String , ? extends Compte> mapCompte, double montant);
 	
-	public Conseiller getConseillerDao(String nom, String password);
+	public Conseiller getConseillerDao(Conseiller conseiller);
 	
 	
 

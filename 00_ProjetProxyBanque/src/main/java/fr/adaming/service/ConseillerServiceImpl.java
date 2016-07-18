@@ -69,6 +69,7 @@ public class ConseillerServiceImpl implements IConseillerService {
 	public Conseiller getConseillerService(Conseiller conseiller) {
 		
 		return conseillerDao.getConseillerDao(conseiller);
+		
 	}
 	
 

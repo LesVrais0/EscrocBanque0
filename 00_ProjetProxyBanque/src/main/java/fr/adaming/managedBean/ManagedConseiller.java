@@ -96,4 +96,10 @@ public class ManagedConseiller {
 		return conseillerService.supprimerClientService(client);
 	
 	}
+	
+	public String verifierConseiller(){
+		
+		
+		return null;
+	}
 }

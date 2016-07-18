@@ -143,6 +143,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		Session session = sessionFactory.openSession();
 		
+		String sql1 ="SELECT COUNT(ce.id) FROM conseillerEntity ce where ce.nom = :nomp , ce.password = :passwordp";
+		Query requete1 =session.createQuery(sql1);
+		int i = (int) requete1.uniqueResult();
+		if(i==1){
+			
 		String sql = "FROM conseillerEntity ce WHERE ce.nom = :nomp , ce.password = :passwordp";
 		
 		Query requete = session.createQuery(sql);
@@ -151,6 +156,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete.setParameter("passwordp", conseiller.getPassword());
 
 		return (Conseiller) requete.uniqueResult();
+		}else{
+			return null;
+		}
+		
+		
 	}
 
 }

@@ -107,6 +107,9 @@ public class ManagedConseiller {
 			
 			conseiller = conseiller1;
 			
+			
+			listeClient = conseillerService.getAllClientsService(conseiller);	
+			
 			return "succesCo";
 			
 		}else{
@@ -114,7 +117,6 @@ public class ManagedConseiller {
 			return "echecCo";
 			
 		}
-	
-
 	}
+	
 }

@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 
 <h:head>
@@ -17,32 +18,29 @@
 
 
 
-<table >
+<table>
 		<thead>
-		<td>Id</td>
 		<td>NOM</td>
 		<td>PRENOM</td>
-		<td>Telephone</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>TELEPHONE</td>
+		<td>ADRESSE</td>
+		<td>CODE POSTAL</td>
+		<td>VILLE</td>
 		</thead>
 
 <!-- Boucle for each utilisant "core" on recupere l'attribut Liste de la requete qui nous a mené sur la page -->
-			<c:forEach var="user" items="${Liste}">
-				<tr>
+		<c:forEach var="client" items="#{mBConseiller.listeClient}">
+			<tr>
 				<!-- On recupere direct les valeurs contenu dans la liste de données (et non d'objet) et on les afficges avec c:out -->
-				<td><c:out value="${user.id}"></c:out></td>
-				<td><c:out value="${user.nom}"></c:out></td>
-				<td><c:out value="${user.prenom}"></c:out></td>
-				<td><c:out value="${user.mail}"></c:out></td>
-				<td><c:out value="${user.motdepasse}"></c:out></td>
-				
-				</tr>
-				
-				
-			</c:forEach>
+				<td><h:outputText value="#{client.nom}"></h:outputText></td>
+				<td><h:outputText value="#{client.prenom}"></h:outputText></td>
+				<td><h:outputText value="#{client.telephone}"></h:outputText></td>
+				<td><h:outputText value="#{client.adresse}"></h:outputText></td>
+				<td><h:outputText value="#{client.codePostal}"></h:outputText></td>
+				<td><h:outputText value="#{client.ville}"></h:outputText></td>
+			</tr>	
+		</c:forEach>
+		
 		
 	</table>
 

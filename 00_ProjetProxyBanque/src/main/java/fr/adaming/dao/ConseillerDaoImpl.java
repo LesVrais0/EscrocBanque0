@@ -125,11 +125,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		Session session = sessionFactory.openSession();
 		
-		String sql = "FROM clientEntity ce where ce.conseiller_id_fk = :idconseillerp";
+		String sql = "FROM clientEntity ce where ce.conseillers.id = :idp ";
 		
 		Query requete = session.createQuery(sql);
 		
-		requete.setParameter("idconseillerp", conseiller.getId());
+		requete.setParameter("idp", conseiller.getId());
 		
 		List<Client> liste = requete.list();
 		

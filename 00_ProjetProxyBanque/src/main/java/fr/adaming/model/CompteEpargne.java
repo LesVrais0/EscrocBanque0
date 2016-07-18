@@ -6,11 +6,13 @@ package fr.adaming.model;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
 
 /**
  * @author INTI-0288
@@ -35,31 +37,36 @@ public class CompteEpargne extends Compte{
 	
 	@OneToOne(mappedBy="comptesEpargnes", cascade = CascadeType.ALL)
 	private CarteElectron cartesElectron;
+	
+	
+	private int tauxRemuneration = 3;
+
 	/**
 	 * 
 	 */
 	public CompteEpargne() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @param solde
-	 * @param dateOuverture
+	 * @param tauxRemuneration
 	 */
-	public CompteEpargne(int solde, Date dateOuverture) {
-		super(solde, dateOuverture);
-		// TODO Auto-generated constructor stub
+	public CompteEpargne(int tauxRemunerationneration) {
+		super();
 	}
 
 	/**
-	 * @param id
-	 * @param solde
-	 * @param dateOuverture
+	 * @return the tauxRemuneration
 	 */
-	public CompteEpargne(int id, int solde, Date dateOuverture) {
-		super(id, solde, dateOuverture);
-		// TODO Auto-generated constructor stub
+	public int gettauxRemuneration() {
+		return tauxRemuneration;
+	}
+
+	/**
+	 * @param tauxRemu the tauxRemu to set
+	 */
+	public void settauxRemuneration(int tauxRemuneration) {
+		this.tauxRemuneration = tauxRemuneration;
 	}
 
 	/* (non-Javadoc)
@@ -67,10 +74,8 @@ public class CompteEpargne extends Compte{
 	 */
 	@Override
 	public String toString() {
-		return "CompteEpargne [getId()=" + getId() + ", getSolde()=" + getSolde() + ", getDateOuverture()="
-				+ getDateOuverture() + "]";
+		return "CompteEpargne [tauxRemuneration=" + tauxRemuneration + "]";
 	}
 	
 	
-
 }

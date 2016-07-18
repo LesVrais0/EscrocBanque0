@@ -20,11 +20,12 @@ public interface IConseillerDao {
 	
 	public List<Client> getAllClientsDao (Conseiller conseiller);
 	
-	public void faireVirementDao(HashMap<String , ? extends Compte> mapCompte, double montant);
+	public void faireVirementDao(Compte a, Compte b, double montant);
 	
 	public Conseiller getConseillerDao(Conseiller conseiller);
 	
 	public Long verifConseillerDao(Conseiller conseiller);
+	
 	
 
 }

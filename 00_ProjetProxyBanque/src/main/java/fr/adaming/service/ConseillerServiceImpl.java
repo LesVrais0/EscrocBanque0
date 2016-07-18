@@ -19,7 +19,6 @@ public class ConseillerServiceImpl implements IConseillerService {
 	private IConseillerDao conseillerDao;
 	
 	@Override
-	@Transactional
 	public String ajouterClientService(Client client, Conseiller conseiller) {
 		
 		conseillerDao.ajouterClientDao(client,conseiller);
@@ -27,7 +26,6 @@ public class ConseillerServiceImpl implements IConseillerService {
 	}
 
 	@Override
-	@Transactional
 	public String modifierClientService(Client client) {
 		
 		conseillerDao.modifierClientDao(client);
@@ -36,36 +34,30 @@ public class ConseillerServiceImpl implements IConseillerService {
 	}
 
 	@Override
-	@Transactional
 	public String supprimerClientService(Client client) {
 		conseillerDao.supprimerClientDao(client);
 		return "succes";
 	}
 
 	@Override
-	@Transactional
 	public Client lireClientService(Client client) {
 		
 		return conseillerDao.lireClientDao(client);
 	}
 
 	@Override
-	@Transactional
 	public List<Client> getAllClientsService(Conseiller conseiller) {
 
 		return conseillerDao.getAllClientsDao(conseiller);
 	}
 
 	@Override
-	@Transactional
-	public void faireVirementService(
-			HashMap<String, ? extends Compte> mapCompte, double montant) {
-		// TODO Auto-generated method stub
+	public void faireVirementService(Compte a,Compte b, double montant) {
+		conseillerDao.faireVirementDao(a, b, montant);
 		
 	}
 
 	@Override
-	@Transactional
 	public Conseiller getConseillerService(Conseiller conseiller) {
 		
 		return conseillerDao.getConseillerDao(conseiller);

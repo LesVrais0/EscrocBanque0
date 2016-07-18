@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.adaming.model.Client;
 import fr.adaming.model.Compte;
+import fr.adaming.model.CompteCourant;
+import fr.adaming.model.CompteEpargne;
 import fr.adaming.model.Conseiller;
 
 @Repository
@@ -107,7 +109,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		Session session = sessionFactory.openSession();
 		
-		String sql ="FROM clientEntity ce where ce.nom = :nomp , ce.prenom = :prenomp , ce.ville = :villep";
+		String sql ="FROM clientEntity ce where ce.nom = :nomp and ce.prenom = :prenomp and ce.ville = :villep";
 		
 		Query requete = session.createQuery(sql);
 		
@@ -116,6 +118,8 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete.setParameter("villep", client.getVille());
 		
 		Client cl = (Client) requete.uniqueResult();
+		
+		session.close();
 		
 		return cl;
 	}
@@ -134,14 +138,73 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		List<Client> liste = requete.list();
 		
+		session.close();
+		
 		return liste;
 	}
 
 	@Override
 	@Transactional
-	public void faireVirementDao(HashMap<String, ? extends Compte> mapCompte,
-			double montant) {
-		// TODO Auto-generated method stub
+	public void faireVirementDao(Compte a, Compte b, double montant) {
+		
+		Session session = sessionFactory.openSession();
+		String sql, sql1;
+		Double a1 ,b1;
+		
+		if(a.getClass().toString().contains("CompteCourant")){
+			
+			Query reqsoldea = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
+			reqsoldea.setParameter("idp", a.getId());
+			
+			CompteCourant cc1 = (CompteCourant) reqsoldea.uniqueResult();
+			a1 = cc1.getSolde() - montant;
+			
+			sql="update compteCourantEntity c set c.solde = :soldepa where c.id= :idpa";
+				
+		}else{
+			
+			Query reqsoldea = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
+			reqsoldea.setParameter("idp", a.getId());
+			
+			CompteEpargne cc1 = (CompteEpargne) reqsoldea.uniqueResult();
+			a1 = cc1.getSolde() - montant;
+			
+			sql="update compteEpargneEntity c set c.solde = :soldepa where c.id= :idpa";
+		}
+			
+		if(b.getClass().toString().contains("CompteCourant")){
+			
+			Query reqsoldea = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
+			reqsoldea.setParameter("idp", b.getId());
+			
+			CompteCourant cc2 = (CompteCourant) reqsoldea.uniqueResult();
+			b1 = cc2.getSolde() - montant;
+		
+			
+			sql1="update compteCourantEntity c set c.solde = :soldepb where c.id= :idpb";
+				
+		}else{
+			
+			Query reqsoldea = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
+			reqsoldea.setParameter("idp", b.getId());
+			
+			CompteEpargne cc2 = (CompteEpargne) reqsoldea.uniqueResult();
+			b1 = cc2.getSolde() - montant;
+			
+			sql1="update compteEpargneEntity c set c.solde = :soldepb where c.id= :idpb";
+		}
+		
+		
+		Query req = session.createQuery(sql);
+		req.setParameter("soldepa",a1);
+		req.setParameter("idpa", a.getId());
+		
+		Query req1 = session.createQuery(sql1);
+		req1.setParameter("soldepb",b1);
+		req1.setParameter("idpb", b.getId());
+		
+		req.executeUpdate();
+		req1.executeUpdate();
 
 	}
 
@@ -158,7 +221,13 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete.setParameter("nomp", conseiller.getNom());
 		requete.setParameter("passwordp", conseiller.getPassword());
 
-		return (Conseiller) requete.uniqueResult();
+		Conseiller cl = (Conseiller) requete.uniqueResult();
+		
+		session.close();
+		
+		return cl;
+		
+		
 		
 		
 	}
@@ -176,6 +245,8 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete1.setParameter("passwordp", conseiller.getPassword());
 		
 		Long i = (Long) requete1.uniqueResult();
+		
+		session.close();
 		
 		return i;
 	}

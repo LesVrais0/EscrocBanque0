@@ -20,12 +20,13 @@ import javax.persistence.Transient;
 @Table(name="comptesCourants")
 public class CompteCourant extends Compte{
 
+
+	
 	/**
 	 * 
 	 */
-	@Transient
-	private static final long serialVersionUID = 185255363L;
-	
+	private static final long serialVersionUID = 1L;
+
 	@OneToOne
 	@JoinColumn(name = "comptesCourantsClients", referencedColumnName = "id")
 	private Client clients;
@@ -36,31 +37,35 @@ public class CompteCourant extends Compte{
 	@OneToOne(mappedBy="comptesCourants", cascade = CascadeType.ALL)
 	private CarteElectron cartesElectron;
 	
+	private Double decouvertAutorisé = 1000.00;
+
 	/**
 	 * 
 	 */
 	public CompteCourant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @param solde
-	 * @param dateOuverture
+	 * @param decouvertAutorisé
 	 */
-	public CompteCourant(int solde, Date dateOuverture) {
-		super(solde, dateOuverture);
-		// TODO Auto-generated constructor stub
+	public CompteCourant(Double decouvertAutorisé) {
+		super();
+		this.decouvertAutorisé = decouvertAutorisé;
 	}
 
 	/**
-	 * @param id
-	 * @param solde
-	 * @param dateOuverture
+	 * @return the decouvertAutorisé
 	 */
-	public CompteCourant(int id, int solde, Date dateOuverture) {
-		super(id, solde, dateOuverture);
-		// TODO Auto-generated constructor stub
+	public Double getDecouvertAutorisé() {
+		return decouvertAutorisé;
+	}
+
+	/**
+	 * @param decouvertAutorisé the decouvertAutorisé to set
+	 */
+	public void setDecouvertAutorisé(Double decouvertAutorisé) {
+		this.decouvertAutorisé = decouvertAutorisé;
 	}
 
 	/* (non-Javadoc)
@@ -68,9 +73,9 @@ public class CompteCourant extends Compte{
 	 */
 	@Override
 	public String toString() {
-		return "CompteCourant [getId()=" + getId() + ", getSolde()=" + getSolde() + ", getDateOuverture()="
-				+ getDateOuverture() + "]";
+		return "CompteCourant [decouvertAutorisé=" + decouvertAutorisé + "]";
 	}
-
+	
+	
 
 }

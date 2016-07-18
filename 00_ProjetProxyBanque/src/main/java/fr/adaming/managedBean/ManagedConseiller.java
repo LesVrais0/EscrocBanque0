@@ -1,5 +1,7 @@
 package fr.adaming.managedBean;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -10,12 +12,30 @@ import javax.faces.bean.SessionScoped;
 
 
 
+
+
+
+
+
+
+
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import fr.adaming.dao.IClientDao;
+import fr.adaming.model.Carte;
+import fr.adaming.model.CarteElectron;
+import fr.adaming.model.CarteVisa;
 import fr.adaming.model.Client;
+import fr.adaming.model.Compte;
+import fr.adaming.model.CompteCourant;
+import fr.adaming.model.CompteEpargne;
 import fr.adaming.model.Conseiller;
 import fr.adaming.service.ConseillerServiceImpl;
+import fr.adaming.service.IClientService;
 import fr.adaming.service.IConseillerService;
 
 @ManagedBean(name="mBConseiller")
@@ -27,7 +47,27 @@ public class ManagedConseiller {
 	private Client client;
 
 	private List<Client> listeClient;
+	
+	private CompteCourant cc;
+	
+	private CompteEpargne ce;
+	
+	private Compte depart;
+	
+	private Compte arrive;
+	
+	private Double montant;
+	
+	String type;
+	
+	private CarteVisa cv;
+	
+	private CarteElectron cel;
+	
+	@ManagedProperty(value="#{clService}")
+	private IClientService clientService;
 
+	
 	@ManagedProperty(value="#{cService}")//il faut le changer avec ManagedProperty
 	private IConseillerService conseillerService;
 
@@ -40,6 +80,10 @@ public class ManagedConseiller {
 		//this.conseillerService=new ConseillerServiceImpl();
 		this.client=new Client();
 		this.conseiller=new Conseiller();
+		this.cc=new CompteCourant();
+		this.ce=new CompteEpargne();
+		this.cv=new CarteVisa();
+		this.cel=new CarteElectron();
 	}
 
 	public Conseiller getConseiller() {
@@ -74,6 +118,91 @@ public class ManagedConseiller {
 		this.conseillerService = conseillerService;
 	}
 
+	/**
+	 * @return the cc
+	 */
+	public CompteCourant getCc() {
+		return cc;
+	}
+
+	/**
+	 * @param cc the cc to set
+	 */
+	public void setCc(CompteCourant cc) {
+		this.cc = cc;
+	}
+
+	/**
+	 * @return the ce
+	 */
+	public CompteEpargne getCe() {
+		return ce;
+	}
+
+	/**
+	 * @param ce the ce to set
+	 */
+	public void setCe(CompteEpargne ce) {
+		this.ce = ce;
+	}
+
+	/**
+	 * @return the cv
+	 */
+	public CarteVisa getCv() {
+		return cv;
+	}
+
+	/**
+	 * @param cv the cv to set
+	 */
+	public void setCv(CarteVisa cv) {
+		this.cv = cv;
+	}
+
+	/**
+	 * @return the cel
+	 */
+	public CarteElectron getCel() {
+		return cel;
+	}
+
+	/**
+	 * @param cel the cel to set
+	 */
+	public void setCel(CarteElectron cel) {
+		this.cel = cel;
+	}
+	
+	/**
+	 * @return the montant
+	 */
+	public Double getMontant() {
+		return montant;
+	}
+
+	/**
+	 * @param montant the montant to set
+	 */
+	public void setMontant(Double montant) {
+		this.montant = montant;
+	}
+	
+	/**
+	 * @return the clientService
+	 */
+	public IClientService getClientService() {
+		return clientService;
+	}
+
+	/**
+	 * @param clientService the clientService to set
+	 */
+	public void setClientService(IClientService clientService) {
+		this.clientService = clientService;
+	}
+	
+
 	// ---------------------------------Getter Setter Constructeur-----------------------------------------------------------------TestEnd
 
 	public Conseiller getConseiller(String nom, String password) {
@@ -97,6 +226,10 @@ public class ManagedConseiller {
 	
 	}
 	
+	public void lireClient(){
+		client = conseillerService.lireClientService(client);
+	}
+	
 	public String LoginConseiller(){
 		
 		Long i = conseillerService.verifConseilerService(conseiller);
@@ -118,5 +251,68 @@ public class ManagedConseiller {
 			
 		}
 	}
+
+	public void ajouterCompteCourant(){
+		Date date= new Date();
+		cc.setDateOuverture(date);
+		clientService.ajouterCCService(cc, client);
+		
+		
+	}
+	
+	public void ajouterCompteEpargne(){
+		Date date= new Date();
+		ce.setDateOuverture(date);
+		clientService.ajouterCEService(ce, client);
+	}
+	
+	public void ajouterCarte(){
+		
+		
+		
+		HashMap<String, Carte> mapCarte = new HashMap<String, Carte>();
+		mapCarte.put("CarteElectron", cel);
+		mapCarte.put("CarteVisa", cv);
+	
+		HashMap<String,Compte> mapCompte = new HashMap<String,Compte>();
+		mapCompte.put("CC", cc);
+		mapCompte.put("CE", ce);
+		clientService.ajouterCarteService(mapCarte, mapCompte);
+		
+		cel = null;
+		cv = null;
+		cc = null;
+		ce = null;
+		
+	}
+	
+	public void faireVirement(){
+	
+		conseillerService.faireVirementService(depart, arrive, montant);
+	
+	}
+
+	public void compteDepart(){
+		
+		if(type.contains("Courant")){
+			depart = new CompteCourant();
+		}else{
+			depart = new CompteEpargne();
+		}
+		type=null;
+		
+	}
+	
+	public void compteArrive(){
+		
+		if(type.contains("Courant")){
+			arrive = new CompteCourant();
+		}else{
+			arrive = new CompteEpargne();
+		}
+		type=null;
+	}
+
+
 	
 }

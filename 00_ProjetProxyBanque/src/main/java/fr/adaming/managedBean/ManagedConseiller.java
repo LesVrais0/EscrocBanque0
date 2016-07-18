@@ -31,7 +31,7 @@ public class ManagedConseiller {
 	@ManagedProperty(value="#{cService}")//il faut le changer avec ManagedProperty
 	private IConseillerService conseillerService;
 
-	// --------------------------------------------------------------------------------
+	// ---------------------------------Getter Setter Constructeur----------------------------------------------------------------Start
 
 	/**
 	 * 
@@ -74,7 +74,7 @@ public class ManagedConseiller {
 		this.conseillerService = conseillerService;
 	}
 
-	// --------------------------------------------------------------------------------
+	// ---------------------------------Getter Setter Constructeur----------------------------------------------------------------End
 
 	public Conseiller getConseiller(String nom, String password) {
 		return conseiller;

@@ -7,9 +7,50 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 
+<h:head>
+<title>Page d'Acceuil</title>
+
+</h:head>
+
+
+<h:body>
+
+
+
+<table >
+		<thead>
+		<td>Id</td>
+		<td>NOM</td>
+		<td>PRENOM</td>
+		<td>Telephone</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</thead>
+
+<!-- Boucle for each utilisant "core" on recupere l'attribut Liste de la requete qui nous a mené sur la page -->
+			<c:forEach var="user" items="${Liste}">
+				<tr>
+				<!-- On recupere direct les valeurs contenu dans la liste de données (et non d'objet) et on les afficges avec c:out -->
+				<td><c:out value="${user.id}"></c:out></td>
+				<td><c:out value="${user.nom}"></c:out></td>
+				<td><c:out value="${user.prenom}"></c:out></td>
+				<td><c:out value="${user.mail}"></c:out></td>
+				<td><c:out value="${user.motdepasse}"></c:out></td>
+				
+				</tr>
+				
+				
+			</c:forEach>
+		
+	</table>
 
 
 
 
 
+
+
+</h:body>
 </html>

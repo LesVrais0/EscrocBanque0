@@ -82,7 +82,7 @@ public class ManagedConseiller {
 
 	public String ajouterClient() {
 			
-			return conseillerService.ajouterClientService(client);
+			return conseillerService.ajouterClientService(client,conseiller);
 
 	}
 	

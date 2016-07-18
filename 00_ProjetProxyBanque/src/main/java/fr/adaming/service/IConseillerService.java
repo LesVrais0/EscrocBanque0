@@ -9,7 +9,7 @@ import fr.adaming.model.Conseiller;
 
 public interface IConseillerService {
 	
-	public String ajouterClientService(Client client);
+	public String ajouterClientService(Client client, Conseiller conseiller);
 	
 	public String modifierClientService(Client client);
 	

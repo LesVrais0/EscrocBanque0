@@ -29,10 +29,10 @@ public class ConseillerDaoImpl implements IConseillerDao {
 
 	@Override
 	@Transactional
-	public void ajouterClientDao(Client client) {
+	public void ajouterClientDao(Client client, Conseiller conseiller) {
 		Session session = sessionFactory.openSession();
 		
-		String sql ="insert into clients (nom, prenom, telephone, adresse, codePostal, ville) values (?, ?, ?, ?, ?, ?)";
+		String sql ="insert into clients (nom, prenom, telephone, adresse, codePostal, ville,conseiller_id_fk) values (?, ?, ?, ?, ?, ?,?)";
 		
 		Query requete= session.createSQLQuery(sql);
 		
@@ -42,6 +42,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete.setParameter(3, client.getAdresse());
 		requete.setParameter(4, client.getCodePostal());
 		requete.setParameter(5, client.getVille());
+		requete.setParameter(6, conseiller.getId());
 		
 		int i = requete.executeUpdate();
 		System.out.println("Valeur de i = "+i);

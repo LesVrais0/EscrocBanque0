@@ -20,9 +20,9 @@ public class ConseillerServiceImpl implements IConseillerService {
 	
 	@Override
 	@Transactional
-	public String ajouterClientService(Client client) {
+	public String ajouterClientService(Client client, Conseiller conseiller) {
 		
-		conseillerDao.ajouterClientDao(client);
+		conseillerDao.ajouterClientDao(client,conseiller);
 		return "succes";
 	}
 

@@ -10,7 +10,7 @@ import fr.adaming.model.Conseiller;
 
 public interface IConseillerDao {
 	
-	public void ajouterClientDao(Client client);
+	public void ajouterClientDao(Client client, Conseiller conseiller);
 	
 	public void modifierClientDao(Client client);
 	

@@ -85,6 +85,10 @@ public class ManagedConseiller {
 			return conseillerService.ajouterClientService(client);
 
 	}
+	
+	public String modifierClient(){
+		return conseillerService.modifierClientService(client);
+	}
 
 	
 	

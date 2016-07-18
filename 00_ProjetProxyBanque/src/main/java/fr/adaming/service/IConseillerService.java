@@ -11,7 +11,7 @@ public interface IConseillerService {
 	
 	public String ajouterClientService(Client client);
 	
-	public void modifierClientService(Client client);
+	public String modifierClientService(Client client);
 	
 	public void supprimerClientService(Client client);
 	

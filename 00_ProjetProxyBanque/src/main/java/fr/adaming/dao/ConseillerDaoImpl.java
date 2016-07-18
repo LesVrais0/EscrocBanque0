@@ -55,8 +55,35 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	@Transactional
 	public void modifierClientDao(Client client) {
-		// TODO Auto-generated method stub
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = " update clientEntity ce set "
+				+ "ce.nom = :nomp , "
+				+ "ce.prenom = :prenomp , "
+				+ "ce.telephone = :telephonep , "
+				+ "ce.adresse = :adressep ,"
+				+ "ce.codePostal = :codePostalp , "
+				+ "ce.ville = :villep where "
+				+ "ce.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("nomp", client.getNom());
+		requete.setParameter("prenomp", client.getPrenom());
+		requete.setParameter("telephonep", client.getTelephone());
+		requete.setParameter("adressep", client.getAdresse());
+		requete.setParameter("codePostalp", client.getCodePostal());
+		requete.setParameter("villep", client.getVille());
+		requete.setParameter("idp", client.getId());
+		
 
+		int i = requete.executeUpdate();
+		System.out.println("Valeur de i = "+i);
+		System.out.println("Le client qu'on essaie de modifier");
+		System.out.println(client);
+		System.out.println("Fin");
+		session.close();
 	}
 
 	@Override

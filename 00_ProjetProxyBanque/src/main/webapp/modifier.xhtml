@@ -7,9 +7,13 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:body>
-<h1>Ajouter</h1>
-	<h:form method="post" name="for1" id="for1">
+<h1>Modifier</h1>
+	<h:form method="post" name="for2" id="for2">
 		<table>
+			<tr>		
+				<td>Id</td>
+				<td><h:inputText type="text" value="#{mBConseiller.client.id}"/></td>
+			</tr>
 			<tr>		
 				<td>Nom</td>
 				<td><h:inputText type="text" value="#{mBConseiller.client.nom}"/></td>
@@ -38,13 +42,11 @@
 			</tr>
 
 			<tr>
-				<td><h:commandButton type="submit" value="Ajouter Client" action="#{mBConseiller.ajouterClient}" /></td>
+				<td><h:commandButton type="submit" value="Ajouter Client" action="#{mBConseiller.modifierClient}" /></td>
 			</tr>
 		</table>
 	</h:form>
 
 </h:body>
-
-
 
 </html>

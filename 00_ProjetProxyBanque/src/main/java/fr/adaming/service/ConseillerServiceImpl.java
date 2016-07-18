@@ -28,8 +28,10 @@ public class ConseillerServiceImpl implements IConseillerService {
 
 	@Override
 	@Transactional
-	public void modifierClientService(Client client) {
-		// TODO Auto-generated method stub
+	public String modifierClientService(Client client) {
+		
+		conseillerDao.modifierClientDao(client);
+		return "succes";
 		
 	}
 

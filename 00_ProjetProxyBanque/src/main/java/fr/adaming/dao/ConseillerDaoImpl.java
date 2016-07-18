@@ -89,8 +89,15 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	@Transactional
 	public void supprimerClientDao(Client client) {
-		// TODO Auto-generated method stub
+		Session session = sessionFactory.openSession();
 
+		String requete = "DELETE FROM utilisateurs where id=?";
+
+		Query query = session.createQuery(requete);
+
+		query.setParameter("id", client.getId());
+
+		session.close();
 	}
 
 	@Override

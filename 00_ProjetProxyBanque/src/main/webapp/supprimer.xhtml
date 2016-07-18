@@ -13,21 +13,34 @@
 	<title>Supprimer un Utilisateur</title>
 </h:head>
 <h:body>
-	<h:form>
-		<h:messages style="color:navy" font-size="400px" position="center" />
+	<div align="center">
+		<h:form>
+			<p:breadCrumb>
+				<p:menuitem value="Accueil" url="login.xhtml" />
+				<p:menuitem value="Nouveau utilisateur" url="ajout.xhtml" />
+				<p:menuitem value="Modifier utilisateur" url="modifier.xhtml" />
+				<p:menuitem value="Supprimer utilisateur" url="supprimer.xhtml" />
+			</p:breadCrumb>
+		</h:form>
 
-		<h:panelGrid columns="3">
-		
-			Entrer votre id:
-			<h:inputText id="id" value="#{mBConseiller.client.nom}" required="true" />
-			<h:message for="id" style="color:red" />
+		<h:form>
+			<fieldset style="width: 349px; height: 80px">
+				<legend>Supprimer un Employé</legend>
+				<h:messages style="color:navy" font-size="400px" position="center" />
 
-		</h:panelGrid>
-		<tr>
-				<td><h:commandButton type="submit" value="Supprimer Client" action="#{mBConseiller.supprimerClient}" /></td>
-			</tr>
+				<h:panelGrid columns="3">
+					
+					<h:inputText id="id" value="#{mBConseiller.client.id}"
+						required="true" />
+					<h:message for="id" style="color:red" />
 
-		<h:commandButton action="#{}" value="Accueil" />
-	</h:form>
+				</h:panelGrid>
+
+				<h:commandButton type="submit" value="Supprimer Client"
+					action="#{mBConseiller.supprimerClient}" />
+
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
 </html>

@@ -99,7 +99,7 @@ public class ManagedConseiller {
 	
 	public String LoginConseiller(){
 		
-		int i = conseillerService.verifConseilerService(conseiller);
+		Long i = conseillerService.verifConseilerService(conseiller);
 		
 		if(i==1){
 			

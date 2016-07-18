@@ -73,7 +73,7 @@ public class ConseillerServiceImpl implements IConseillerService {
 	}
 
 	@Override
-	public int verifConseilerService(Conseiller conseiller) {
+	public Long verifConseilerService(Conseiller conseiller) {
 
 		return conseillerDao.verifConseillerDao(conseiller);
 	}

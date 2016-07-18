@@ -163,7 +163,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	}
 
 	@Override
-	public int verifConseillerDao(Conseiller conseiller) {
+	public Long verifConseillerDao(Conseiller conseiller) {
 		
 		Session session = sessionFactory.openSession();
 		
@@ -174,7 +174,7 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		requete1.setParameter("nomp", conseiller.getNom());
 		requete1.setParameter("passwordp", conseiller.getPassword());
 		
-		int i = (int) requete1.uniqueResult();
+		Long i = (Long) requete1.uniqueResult();
 		
 		return i;
 	}

@@ -87,10 +87,13 @@ public class ManagedConseiller {
 	}
 	
 	public String modifierClient(){
+		
 		return conseillerService.modifierClientService(client);
 	}
 
+	public String supprimerClient() {
+		
+		return conseillerService.supprimerClientService(client);
 	
-	
-
+	}
 }

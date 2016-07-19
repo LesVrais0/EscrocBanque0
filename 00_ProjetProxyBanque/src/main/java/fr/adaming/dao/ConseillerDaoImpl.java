@@ -252,4 +252,24 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		return i;
 	}
 
+	@Override
+	public Client getClientById(Client client) {
+			Session session = sessionFactory.openSession();
+			
+			String sql = "FROM clientEntity ce WHERE ce.id = :idp";
+			
+			Query requete = session.createQuery(sql);
+			
+			requete.setParameter("idp", client.getId());
+
+			Client cl = (Client) requete.uniqueResult();
+			
+			session.close();
+			
+			return cl;
+
+	}
+
+
+	
 }

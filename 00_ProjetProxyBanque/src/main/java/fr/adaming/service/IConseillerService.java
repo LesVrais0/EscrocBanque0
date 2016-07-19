@@ -24,4 +24,6 @@ public interface IConseillerService {
 	public Conseiller getConseillerService(Conseiller conseiller);
 	
 	public Long verifConseilerService(Conseiller conseiller);
+	
+	public Client getClientById(Client client);
 }

@@ -340,5 +340,9 @@ public class ManagedConseiller {
 		conseillerService.faireVirementService(cd, ca, montant);
 
 	}
+	
+	public void getClientId(){
+		client = conseillerService.getClientById(client);
+	}
 
 }

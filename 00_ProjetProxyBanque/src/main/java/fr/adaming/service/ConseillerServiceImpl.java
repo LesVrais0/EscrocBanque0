@@ -69,6 +69,11 @@ public class ConseillerServiceImpl implements IConseillerService {
 
 		return conseillerDao.verifConseillerDao(conseiller);
 	}
+
+	@Override
+	public Client getClientById(Client client) {
+		return conseillerDao.getClientById(client);
+	}
 	
 
 }

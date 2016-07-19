@@ -45,16 +45,32 @@
 
 	</h:form>
 
-	<div align="center">
-		<h:form method="post" name="for2" id="for2">
-			<fieldset style="width: 349px; height: 260px">
-				<legend>Modifier un Client</legend>
+<div align="center">
+		<h:form method="post" name="for78" id="for7">
+			<fieldset style="width: 349px; height: 100px">
+				<legend>Chercher un Client</legend>
 				<table>
 					<tr>
 						<td>Id</td>
 						<td><h:inputText type="text"
 								value="#{mBConseiller.client.id}" /></td>
 					</tr>
+					<tr>
+						<td><h:commandButton type="submit" value="Cherche Client"
+								action="#{mBConseiller.getClientId}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+</div>
+	
+	
+	
+	<div align="center">
+		<h:form method="post" name="for2" id="for2">
+			<fieldset style="width: 349px; height: 240px">
+				<legend>Modifier un Client</legend>
+				<table>
 					<tr>
 						<td>Nom</td>
 						<td><h:inputText type="text"

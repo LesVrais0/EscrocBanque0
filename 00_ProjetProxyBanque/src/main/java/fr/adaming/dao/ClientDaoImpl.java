@@ -55,7 +55,7 @@ public class ClientDaoImpl implements IClientDao {
 
 		Session session = sessionFactory.openSession();
 
-		String sql = "insert into comptesEpargnes (dateOuverture,solde,comptesEpargne,tauxRemuneration) values(?,?,?)";
+		String sql = "insert into comptesEpargnes (dateOuverture,solde,comptesEpargne,tauxRemuneration) values(?,?,?,?)";
 
 		Query requete = session.createSQLQuery(sql);
 

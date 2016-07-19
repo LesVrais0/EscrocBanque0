@@ -32,8 +32,8 @@
 						value="#{mBConseiller.client.ville}" /></td>
 			</tr>
 			<tr>
-				<td><h:commandButton type="submit"
-						value="Ajouter Compte Courant" action="#{mBConseiller.lireClient}" /></td>
+				<td><h:commandButton type="submit" value="LIRE CLIENT"
+						action="#{mBConseiller.lireClient}" /></td>
 			</tr>
 		</table>
 	</h:form>
@@ -107,97 +107,37 @@
 		</table>
 	</h:form>
 
+
+
+
 	<h:form method="post">
-		<table>
-			<tr>
-				<td>Id du compte</td>
-				<td><h:inputText type="text" value="#{mBConseiller.ce.id}" /></td>
-			</tr>
-
-
-			<tr>
-				<td>taux</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.ce.tauxRemuneration}" /></td>
-			</tr>
-
-			<tr>
-				<td><h:commandButton type="submit"
-						value="Ajouter Compte Epargne"
-						action="#{mBConseiller.ajouterCompteEpargne}" /></td>
-			</tr>
-		</table>
-	</h:form>
-
-
-	<h:form method="post" name="for123" id="for123">
-		<table>
-			<tr>
-				<td>Nom</td>
-				<td><h:inputText type="text" value="#{mBConseiller.client.nom}" /></td>
-			</tr>
-
-			<tr>
-				<td>Prenom</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.client.prenom}" /></td>
-			</tr>
-			<tr>
-				<td>Adresse</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.client.adresse}" /></td>
-			</tr>
-
-			<tr>
-				<td>Code Postal</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.client.codePostal}" /></td>
-			</tr>
-			<tr>
-				<td>Ville</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.client.ville}" /></td>
-			</tr>
-			<tr>
-				<td>Telephone</td>
-				<td><h:inputText type="text"
-						value="#{mBConseiller.client.telephone}" /></td>
-			</tr>
-
-			<tr>
-				<td><h:commandButton type="submit" value="Ajouter Client"
-						action="#{mBConseiller.ajouterClient}" /></td>
-			</tr>
-		</table>
-	</h:form>
-
-
-	<h:form method="post" name="for123" id="for123">
 		<table>
 
 			<tr>
 				<td>Compte de départ</td>
-				<h:selectManyCheckbox value="#{mBConseiller.type[0]}">
-					<f:selectItem itemValue="CompteCourant" itemLabel="Compte Courant" />
-					<f:selectItem itemValue="CompteEpargne" itemLabel="Compte Epargne" />
-				</h:selectManyCheckbox>
-
+				<td><h:selectManyCheckbox value="#{mBConseiller.type}">
+						<f:selectItem itemValue="CompteCourant" itemLabel="Compte Courant" />
+						<f:selectItem itemValue="CompteEpargne" itemLabel="Compte Epargne" />
+					</h:selectManyCheckbox></td>
 				<td><h:inputText type="text" value="#{mBConseiller.iddp}" /></td>
 			</tr>
 
 			<tr>
 
 				<td>Compte d'arrive</td>
-
-				<h:selectManyCheckbox value="#{mBConseiller.type[1]}">
-					<f:selectItem itemValue="CompteCourant" itemLabel="Compte Courant" />
-					<f:selectItem itemValue="CompteEpargne" itemLabel="Compte Epargne" />
-				</h:selectManyCheckbox>
-
+				<td><h:selectManyCheckbox value="#{mBConseiller.type}">
+						<f:selectItem itemValue="CompteCourant" itemLabel="Compte Courant" />
+						<f:selectItem itemValue="CompteEpargne" itemLabel="Compte Epargne" />
+					</h:selectManyCheckbox></td>
 				<td><h:inputText type="text" value="#{mBConseiller.idar}" /></td>
 			</tr>
+			
 			<tr>
-				<td><h:commandButton type="submit" value="Ajouter Client"
+			<td>Valeur du montant</td>
+			<td><h:inputText type="text" value="#{mBConseiller.montant}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit" value="Faire un virement"
 						action="#{mBConseiller.faireVirement}" /></td>
 			</tr>
 

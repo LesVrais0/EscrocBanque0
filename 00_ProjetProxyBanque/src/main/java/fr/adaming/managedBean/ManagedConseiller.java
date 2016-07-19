@@ -48,7 +48,7 @@ public class ManagedConseiller {
 	
 	private Double montant;
 
-	String type[];
+	private String type[]={"1","2"};
 
 	private CarteVisa cv;
 
@@ -307,7 +307,7 @@ public class ManagedConseiller {
 	}
 
 	public void faireVirement() {
-
+		System.out.println(type[0]+type[1]);
 
 		if (type[0].contains("CompteCourant")) {
 			cd = new CompteCourant();

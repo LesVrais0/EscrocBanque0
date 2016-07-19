@@ -5,6 +5,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 
 
@@ -43,6 +44,38 @@
 		</p:menubar>
 
 	</h:form>
+	
+	<h1>Vos clients :</h1>
+	<div align="center">
+	<br></br>
+		<table>
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Nom</td>
+					<td>Prénom</td>
+					<td>Téléphone</td>
+					<td>Adresse</td>
+					<td>Code Postal</td>
+					<td>Ville</td>
+				</tr>
+			</thead>
+
+			<!-- Boucle for each utilisant "core" on recupere l'attribut Liste de la requete qui nous a mené sur la page -->
+			<c:forEach var="client" items="#{mBConseiller.listeClient}">
+				<tr>
+					<!-- On recupere direct les valeurs contenu dans la liste de données (et non d'objet) et on les afficges avec c:out -->
+					<td><h:outputText value="#{client.id}"></h:outputText></td>
+					<td><h:outputText value="#{client.nom}"></h:outputText></td>
+					<td><h:outputText value="#{client.prenom}"></h:outputText></td>
+					<td><h:outputText value="#{client.telephone}"></h:outputText></td>
+					<td><h:outputText value="#{client.adresse}"></h:outputText></td>
+					<td><h:outputText value="#{client.codePostal}"></h:outputText></td>
+					<td><h:outputText value="#{client.ville}"></h:outputText></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 
 	<div align="center">
 		<h:form method="post" name="for1" id="for1">

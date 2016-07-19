@@ -16,19 +16,36 @@
 
 
 <h:body>
+
+	<h:form>
+		<p:growl id="menu" />
+
+		<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
+		
+		<p:menubar>
+			<p:submenu label="Conseiller">
+				<p:menuitem value="Nouveau Conseiller" url="ajouterConseiller.xhtml" />
+				<p:menuitem value="Modifier Conseiller" url="modifierConseiller.xhtml" />
+				<p:menuitem value="Supprimer Conseiller" url="supprimerConseiller.xhtml" />
+				<p:separator/>
+				<p:menuitem value="Quit" url="loginGerant.xhtml" />
+			</p:submenu>
+
+			<p:menuitem value="Audit de l'agence" url="audit.xhtml" />
+
+			<p:menuitem value="Bonus"
+				url="https://www.youtube.com/watch?v=32UGD0fV45g" />
+		</p:menubar>
+
+	</h:form>
+		
+		<h1>Vos conseiller de l'agence #{mbGerant.gerant.agence}</h1>
 	<div align="center">
-		<h:form>
-			<p:breadCrumb>
-				<p:menuitem value="Accueil" url="presentation.xhtml" />
-				<p:menuitem value="Nouveau conseiller" url="ajout.xhtml" />
-				<p:menuitem value="Modifier conseiller" url="modifier.xhtml" />
-				<p:menuitem value="Supprimer conseiller" url="supprimer.xhtml" />
-			</p:breadCrumb>
-		</h:form>
-	</div>
-		<h1>Vos conseiller</h1>
-	<div align="center">
+	
 	<br></br>
+	
+	
+	
 		<table>
 			<thead>
 				<tr>

@@ -1,6 +1,7 @@
 package fr.adaming.dao;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import fr.adaming.model.Carte;
 import fr.adaming.model.Client;
@@ -14,6 +15,6 @@ public interface IClientDao {
 	
 	public void ajouterCEDao(CompteEpargne ce, Client client);
 	
-	public void ajouterCarte(HashMap<String , ? extends Carte> mapCarte,HashMap<String , ? extends Compte> mapCompte);
+	public void ajouterCarte(Map<String , Carte> mapCarte,Map<String , Compte> mapCompte);
 
 }

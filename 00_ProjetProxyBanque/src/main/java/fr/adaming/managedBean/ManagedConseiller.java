@@ -68,7 +68,7 @@ public class ManagedConseiller {
 	private IClientService clientService;
 
 	
-	@ManagedProperty(value="#{cService}")//il faut le changer avec ManagedProperty
+	@ManagedProperty(value="#{cService}")
 	private IConseillerService conseillerService;
 
 	// ---------------------------------Getter Setter Constructeur----------------------------------------------------------------Start
@@ -266,25 +266,7 @@ public class ManagedConseiller {
 		clientService.ajouterCEService(ce, client);
 	}
 	
-	public void ajouterCarte(){
-		
-		
-		
-		HashMap<String, Carte> mapCarte = new HashMap<String, Carte>();
-		mapCarte.put("CarteElectron", cel);
-		mapCarte.put("CarteVisa", cv);
-	
-		HashMap<String,Compte> mapCompte = new HashMap<String,Compte>();
-		mapCompte.put("CC", cc);
-		mapCompte.put("CE", ce);
-		clientService.ajouterCarteService(mapCarte, mapCompte);
-		
-		cel = null;
-		cv = null;
-		cc = null;
-		ce = null;
-		
-	}
+
 	
 	public void faireVirement(){
 	

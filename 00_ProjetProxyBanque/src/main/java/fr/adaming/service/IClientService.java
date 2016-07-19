@@ -1,6 +1,7 @@
 package fr.adaming.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import fr.adaming.model.Carte;
 import fr.adaming.model.Client;
@@ -14,7 +15,7 @@ public interface IClientService {
 	
 	public void ajouterCEService(CompteEpargne ce, Client client);
 	
-	public void ajouterCarteService(HashMap<String , ? extends Carte> mapCarte,HashMap<String , ? extends Compte> mapCompte);
+	public void ajouterCarteService(Map<String , Carte> mapCarte,Map<String , Compte> mapCompte);
 
 	
 }

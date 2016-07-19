@@ -1,6 +1,7 @@
 package fr.adaming.service;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,21 @@ public class ClientServiceImpl implements IClientService{
 	private IClientDao clientDao;
 	
 	
+	
+	/**
+	 * @return the clientDao
+	 */
+	public IClientDao getClientDao() {
+		return clientDao;
+	}
+
+	/**
+	 * @param clientDao the clientDao to set
+	 */
+	public void setClientDao(IClientDao clientDao) {
+		this.clientDao = clientDao;
+	}
+
 	@Override
 	public void ajouterCCService(CompteCourant cc, Client client) {
 		clientDao.ajouterCCDao(cc, client);
@@ -32,8 +48,8 @@ public class ClientServiceImpl implements IClientService{
 	}
 
 	@Override
-	public void ajouterCarteService(HashMap<String, ? extends Carte> mapCarte,
-			HashMap<String, ? extends Compte> mapCompte) {
+	public void ajouterCarteService(Map<String, Carte> mapCarte,
+			Map<String, Compte> mapCompte) {
 		
 		clientDao.ajouterCarte(mapCarte, mapCompte);
 		

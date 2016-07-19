@@ -11,29 +11,31 @@ public class GerantServiceImpl implements IGerantService {
 
 	//@Autowired
 	IGerantDao gerantDao = new GerantDaoImpl();
-	
+
 	@Override
-	public Gerant getGerantService(String nom, String password) {
+	public Gerant getGerantService(Gerant gerant) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void ajouterConseillerService(Conseiller conseiller) {
-		System.out.println("Service gerant");
-		gerantDao.ajouterConseillerDao(conseiller);
-	}
-
-	@Override
-	public void modifierConseillerService(Conseiller Conseiller) {
+	public void ajouterConseillerService(Conseiller conseiller, Gerant gerant) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void supprimerConseillerService(Conseiller Conseiller) {
+	public void modifierConseillerService(Conseiller conseiller) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void supprimerConseillerService(Conseiller conseiller) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
 
 }

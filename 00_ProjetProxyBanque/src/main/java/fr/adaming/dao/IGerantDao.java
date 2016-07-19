@@ -6,9 +6,9 @@ import fr.adaming.model.Gerant;
 
 public interface IGerantDao {
 
-	public Gerant getGerantDao(String nom, String password);
+	public Gerant getGerantDao(Gerant gerant);
 	
-	public void ajouterConseillerDao(Conseiller Conseiller);
+	public void ajouterConseillerDao(Conseiller Conseiller,Gerant gerant);
 	
 	public void modifierConseillerDao(Conseiller Conseiller);
 	

@@ -7,120 +7,168 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
-	<title> un client</title>
+	<title>Un client</title>
 </h:head>
 
 <h:body>
 
-<h:form method="post" name="for1" id="for1"> 
-			<table>
-				<tr>
-					<td>nom</td>
-					<td><h:inputText type="text" value="#{mBConseiller.client.nom}" /></td>
-				</tr>
-				
-				<tr>
-					<td>prenom</td>
-					<td><h:inputText type="text" value="#{mBConseiller.client.prenom}" /></td>
-				</tr>
-				
+	<h:form method="post" name="for1" id="for1">
+		<table>
+			<tr>
+				<td>nom</td>
+				<td><h:inputText type="text" value="#{mBConseiller.client.nom}" /></td>
+			</tr>
 
-				<tr>
-					<td>ville</td>
-					<td><h:inputText type="text" value="#{mBConseiller.client.ville}" /></td>
-				</tr>
-				<tr>
-					<td><h:commandButton type="submit" value="Ajouter Compte Courant"
-							action="#{mBConseiller.lireClient}" /></td>
-				</tr>
-			</table>
+			<tr>
+				<td>prenom</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.prenom}" /></td>
+			</tr>
+
+
+			<tr>
+				<td>ville</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.ville}" /></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit"
+						value="Ajouter Compte Courant" action="#{mBConseiller.lireClient}" /></td>
+			</tr>
+		</table>
 	</h:form>
 
 
-<h:form method="post" >
-			<table>
-				
-				<tr>
-					<td>solde</td>
-					<td><h:inputText type="text" value="#{mBConseiller.cc.solde}" /></td>
-				</tr>
-				
+	<h:form method="post">
+		<table>
+			<tr>
+				<td>solde</td>
+				<td><h:inputText type="text" value="#{mBConseiller.cc.solde}" /></td>
+			</tr>
 
-				<tr>
-					<td>decouvert autorise</td>
-					<td><h:inputText type="text" value="#{mBConseiller.cc.decouvertAutorisé}" /></td>
-				</tr>
-				<tr>
-					<td><h:commandButton type="submit" value="Ajouter Compte Courant"
-							action="#{mBConseiller.ajouterCompteCourant}" /></td>
-				</tr>
-			</table>
+			<tr>
+				<td>decouvert autorise</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.cc.decouvertAutorisé}" /></td>
+			</tr>
+
+			<tr>
+				<td><h:commandButton type="submit"
+						value="Ajouter Compte Courant"
+						action="#{mBConseiller.ajouterCompteCourant}" /></td>
+			</tr>
+			
+		</table>
+	</h:form>
+
+	<h:form method="post">
+		<table>
+			<tr>
+				<td>Solde</td>
+				<td><h:inputText type="text" value="#{mBConseiller.ce.solde}" /></td>
+			</tr>
+
+
+			<tr>
+				<td>Taux</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.ce.tauxRemuneration}" /></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit"
+						value="Ajouter Compte Epargne"
+						action="#{mBConseiller.ajouterCompteEpargne}" /></td>
+			</tr>
+		</table>
+	</h:form>
+
+	<h:form method="post">
+		<table>
+			<tr>
+				<h:selectManyCheckbox value="#{mBClient.carte}">
+					<f:selectItem itemValue="Visa" itemLabel="Carte Visa" />
+					<f:selectItem itemValue="Electron" itemLabel="Carte Electron" />
+				</h:selectManyCheckbox>
+
+				<h:selectManyCheckbox value="#{mBClient.compte}">
+					<f:selectItem itemValue="Epargne" itemLabel="Compte Epargne" />
+					<f:selectItem itemValue="Courant" itemLabel="Compte Courant" />
+				</h:selectManyCheckbox>
+			</tr>
+			<tr>
+				<td>Numéro de compte</td>
+				<td><h:inputText type="text" value="#{mBClient.idtempo}" /></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit"
+						value="Relier une carte à un compte"
+						action="#{mBClient.ajouterCarte}" /></td>
+			</tr>
+		</table>
 	</h:form>
 
 <h:form method="post">
-			<table>				
-				<tr>
-					<td>solde</td>
-					<td><h:inputText type="text" value="#{mBConseiller.ce.solde}" /></td>
-				</tr>
-				
+	<table>
+		<tr>
+			<td>Id du compte</td>
+			<td><h:inputText type="text" value="#{mBConseiller.ce.id}" /></td>
+		</tr>
 
-				<tr>
-					<td>taux</td>
-					<td><h:inputText type="text" value="#{mBConseiller.ce.tauxRemuneration}" /></td>
-				</tr>
-				<tr>
-					<td><h:commandButton type="submit" value="Ajouter Compte Epargne"
-							action="#{mBConseiller.ajouterCompteEpargne}" /></td>
-				</tr>
-			</table>
-	</h:form>
-	
-	
-	
-	
-	
-	
+
+		<tr>
+			<td>taux</td>
+			<td><h:inputText type="text"
+					value="#{mBConseiller.ce.tauxRemuneration}" /></td>
+		</tr>
+
+		<tr>
+			<td><h:commandButton type="submit"
+					value="Ajouter Compte Epargne"
+					action="#{mBConseiller.ajouterCompteEpargne}" /></td>
+		</tr>
+	</table>
+</h:form>
+
+
 	<h:form method="post" name="for123" id="for123">
-			<table>
-				<tr>
-					<td>Nom</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.nom}" /></td>
-				</tr>
+		<table>
+			<tr>
+				<td>Nom</td>
+				<td><h:inputText type="text" value="#{mBConseiller.client.nom}" /></td>
+			</tr>
 
-				<tr>
-					<td>Prenom</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.prenom}" /></td>
-				</tr>
-				<tr>
-					<td>Adresse</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.adresse}" /></td>
-				</tr>
+			<tr>
+				<td>Prenom</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.prenom}" /></td>
+			</tr>
+			<tr>
+				<td>Adresse</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.adresse}" /></td>
+			</tr>
 
-				<tr>
-					<td>Code Postal</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.codePostal}" /></td>
-				</tr>
-				<tr>
-					<td>Ville</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.ville}" /></td>
-				</tr>
-				<tr>
-					<td>Telephone</td>
-					<td><h:inputText type="text"
-							value="#{mBConseiller.client.telephone}" /></td>
-				</tr>
+			<tr>
+				<td>Code Postal</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.codePostal}" /></td>
+			</tr>
+			<tr>
+				<td>Ville</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.ville}" /></td>
+			</tr>
+			<tr>
+				<td>Telephone</td>
+				<td><h:inputText type="text"
+						value="#{mBConseiller.client.telephone}" /></td>
+			</tr>
 
-				<tr>
-					<td><h:commandButton type="submit" value="Ajouter Client"
-							action="#{mBConseiller.ajouterClient}" /></td>
-				</tr>
-			</table>
+			<tr>
+				<td><h:commandButton type="submit" value="Ajouter Client"
+						action="#{mBConseiller.ajouterClient}" /></td>
+			</tr>
+		</table>
 	</h:form>
 
 

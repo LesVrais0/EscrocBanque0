@@ -72,5 +72,20 @@ public class Gerant extends Personne {
 	public String toString() {
 		return "Gerant [agence=" + agence + ", password=" + password + ", conseillers=" + conseillers + "]";
 	}
+
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	
 }

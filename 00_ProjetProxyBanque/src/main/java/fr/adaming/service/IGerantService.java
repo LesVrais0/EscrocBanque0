@@ -16,5 +16,7 @@ public interface IGerantService {
 	public void supprimerConseillerService(Conseiller conseiller);
 	
 	public List<Conseiller> getAllConseiller(Gerant gerant);
+	
+	public Long verifGerant(Gerant gerant);
 
 }

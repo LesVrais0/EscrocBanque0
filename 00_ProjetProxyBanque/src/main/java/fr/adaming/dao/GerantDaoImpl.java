@@ -11,12 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.adaming.model.Client;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
-@Transactional
+
 @Repository
+@Transactional
 public class GerantDaoImpl implements IGerantDao {
 	
 	// -----------------------SessionFactory------------------------------------
@@ -31,7 +31,7 @@ public class GerantDaoImpl implements IGerantDao {
 
 	@Override
 	public Gerant getGerantDao(Gerant gerant) {
-Session session = sessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		
 		String sql = "FROM gerantEntity ge WHERE ge.nom = :nomp and ge.password = :passwordp";
 		
@@ -120,6 +120,31 @@ Session session = sessionFactory.openSession();
 		session.close();
 		
 		return liste;
+	}
+
+	
+	
+	
+	
+	
+	
+	@Override
+	public Long verifGerant(Gerant gerant) {
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql1 ="SELECT COUNT (ce) FROM gerantEntity ce where ce.nom = :nomp and ce.password = :passwordp";
+		
+		Query requete1 =session.createQuery(sql1);
+		
+		requete1.setParameter("nomp", gerant.getNom());
+		requete1.setParameter("passwordp", gerant.getPassword());
+		
+		Long i = (Long) requete1.uniqueResult();
+		
+		session.close();
+		
+		return i;
 	}
 
 }

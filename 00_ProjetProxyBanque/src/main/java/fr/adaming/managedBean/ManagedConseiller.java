@@ -1,18 +1,12 @@
 package fr.adaming.managedBean;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
-import fr.adaming.dao.IClientDao;
-import fr.adaming.model.Carte;
 import fr.adaming.model.CarteElectron;
 import fr.adaming.model.CarteVisa;
 import fr.adaming.model.Client;
@@ -20,7 +14,6 @@ import fr.adaming.model.Compte;
 import fr.adaming.model.CompteCourant;
 import fr.adaming.model.CompteEpargne;
 import fr.adaming.model.Conseiller;
-import fr.adaming.service.ConseillerServiceImpl;
 import fr.adaming.service.IClientService;
 import fr.adaming.service.IConseillerService;
 

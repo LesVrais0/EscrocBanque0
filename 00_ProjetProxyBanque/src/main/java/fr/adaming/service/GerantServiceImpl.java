@@ -3,16 +3,18 @@ package fr.adaming.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import fr.adaming.dao.GerantDaoImpl;
 import fr.adaming.dao.IGerantDao;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
+@Service("gerantService")
 public class GerantServiceImpl implements IGerantService {
 
-	//@Autowired
-	IGerantDao gerantDao = new GerantDaoImpl();
+	@Autowired
+	IGerantDao gerantDao;
 
 	@Override
 	public Gerant getGerantService(Gerant gerant) {
@@ -41,6 +43,12 @@ public class GerantServiceImpl implements IGerantService {
 	public List<Conseiller> getAllConseiller(Gerant gerant) {
 		
 		return gerantDao.getAllConseiller(gerant);
+	}
+
+	@Override
+	public Long verifGerant(Gerant gerant) {
+		
+		return gerantDao.verifGerant(gerant);
 	}
 	
 

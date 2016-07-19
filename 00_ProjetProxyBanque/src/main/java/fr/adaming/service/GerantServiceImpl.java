@@ -1,5 +1,7 @@
 package fr.adaming.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import fr.adaming.dao.GerantDaoImpl;
@@ -33,6 +35,12 @@ public class GerantServiceImpl implements IGerantService {
 	public void supprimerConseillerService(Conseiller conseiller) {
 		gerantDao.supprimerConseillerDao(conseiller);
 		
+	}
+
+	@Override
+	public List<Conseiller> getAllConseiller(Gerant gerant) {
+		
+		return gerantDao.getAllConseiller(gerant);
 	}
 	
 

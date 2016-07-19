@@ -1,5 +1,7 @@
 package fr.adaming.service;
 
+import java.util.List;
+
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
@@ -12,5 +14,7 @@ public interface IGerantService {
 	public void modifierConseillerService(Conseiller conseiller);
 	
 	public void supprimerConseillerService(Conseiller conseiller);
+	
+	public List<Conseiller> getAllConseiller(Gerant gerant);
 
 }

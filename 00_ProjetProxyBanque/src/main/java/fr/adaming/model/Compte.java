@@ -31,6 +31,7 @@ public abstract class Compte implements Serializable{
 	public Compte() {
 		super();
 	}
+	
 	/**
 	 * @param solde
 	 * @param dateOuverture

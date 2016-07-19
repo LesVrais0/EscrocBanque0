@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.adaming.model.Client;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
@@ -106,8 +107,19 @@ Session session = sessionFactory.openSession();
 
 	@Override
 	public List<Conseiller> getAllConseiller(Gerant gerant) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM conseillerEntity ce where ce.gerants.id= :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", gerant.getId());
+		
+		List<Conseiller> liste = requete.list();
+		
+		session.close();
+		
+		return liste;
 	}
 
 }

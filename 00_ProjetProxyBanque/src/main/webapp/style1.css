@@ -1,0 +1,34 @@
+@CHARSET "ISO-8859-1";
+
+table {
+
+background-color:#D0E3FA;
+border:1px solid #D0E3FA;
+}
+
+tbody {
+background-color:#FFFFFF;
+border:1px solid #6495ed;
+}
+
+caption {
+font-family:sans-serif;
+}
+
+fieldset {
+background-color:#D0E3FA;
+border:1px solid #6495ed;
+	
+}
+legend {
+font-size:24px;
+font-weight: bold;
+font-family: "Times new roman",times, sans-serif;
+
+}
+thead, tfoot, th, td, tr{
+background-color:#D0E3FA;
+border:1px solid #D0E3FA;
+	
+	
+}

@@ -11,7 +11,7 @@
 </h:head>
 
 <h:body>
-
+<!-- ========================BLOQUE POUR LIRE UN CLIENT DEBUT================================================ -->
 	<h:form method="post" name="for1" id="for1">
 		<table>
 			<tr>
@@ -37,8 +37,11 @@
 			</tr>
 		</table>
 	</h:form>
+<!-- ========================BLOQUE POUR LIRE UN CLIENT DEBUT================================================ -->
 
 
+
+<!-- ========================BLOQUE POUR AJOUTER UN CC DEBUT================================================ -->
 	<h:form method="post">
 		<table>
 			<tr>
@@ -60,7 +63,9 @@
 
 		</table>
 	</h:form>
-
+	<!-- ========================BLOQUE POUR AJOUTER UN CC FIN================================================ -->	
+	
+<!-- ========================BLOQUE POUR AJOUTER UN CE DEBUT================================================ -->
 	<h:form method="post">
 		<table>
 			<tr>
@@ -81,7 +86,9 @@
 			</tr>
 		</table>
 	</h:form>
+<!-- ========================BLOQUE POUR AJOUTER UN CE FIN================================================ -->	
 
+<!-- ========================BLOQUE POUR AJOUTER UNE CARTE DEBUT================================================ -->
 	<h:form method="post">
 		<table>
 			<tr>
@@ -106,9 +113,9 @@
 			</tr>
 		</table>
 	</h:form>
+<!-- ========================BLOQUE POUR AJOUTER UNE CARTE FIN================================================ -->
 
-
-
+<!-- ========================BLOQUE POUR FAIRE UN VIREMENT DEBUT================================================ -->
 
 	<h:form method="post">
 		<table>
@@ -125,7 +132,7 @@
 			<tr>
 
 				<td>Compte d'arrive</td>
-				<td><h:selectManyCheckbox value="#{mBConseiller.type}">
+				<td><h:selectManyCheckbox value="#{mBConseiller.type2}">
 						<f:selectItem itemValue="CompteCourant" itemLabel="Compte Courant" />
 						<f:selectItem itemValue="CompteEpargne" itemLabel="Compte Epargne" />
 					</h:selectManyCheckbox></td>
@@ -147,7 +154,7 @@
 
 
 
-
+<!-- ========================BLOQUE POUR FAIRE UN VIREMENT FIN================================================ -->
 
 
 

@@ -48,8 +48,10 @@ public class ManagedConseiller {
 	
 	private Double montant;
 
-	private String type[]={"1","2"};
+	private String type[]={"1"};
 
+	private String type2[]={"1"};
+	
 	private CarteVisa cv;
 
 	private CarteElectron cel;
@@ -106,6 +108,22 @@ public class ManagedConseiller {
 
 	public void setConseillerService(IConseillerService conseillerService) {
 		this.conseillerService = conseillerService;
+	}
+
+	
+	
+	/**
+	 * @return the type2
+	 */
+	public String[] getType2() {
+		return type2;
+	}
+
+	/**
+	 * @param type2 the type2 to set
+	 */
+	public void setType2(String[] type2) {
+		this.type2 = type2;
 	}
 
 	/**
@@ -307,7 +325,7 @@ public class ManagedConseiller {
 	}
 
 	public void faireVirement() {
-		System.out.println(type[0]+type[1]);
+		System.out.println(type[0]+type2[0]);
 
 		if (type[0].contains("CompteCourant")) {
 			cd = new CompteCourant();
@@ -318,12 +336,12 @@ public class ManagedConseiller {
 			cd.setId(iddp);
 		}
 
-		if (type[1].contains("CompteCourant")) {
+		if (type2[0].contains("CompteCourant")) {
 			ca = new CompteCourant();
-			cd.setId(idar);
-		} else if (type[1].contains("CompteEpargne")) {
+			ca.setId(idar);
+		} else if (type2[0].contains("CompteEpargne")) {
 			ca = new CompteEpargne();
-			cd.setId(idar);
+			ca.setId(idar);
 		}
 		
 		conseillerService.faireVirementService(cd, ca, montant);

@@ -26,6 +26,8 @@ public interface IConseillerDao {
 	
 	public Long verifConseillerDao(Conseiller conseiller);
 	
+	public Client getClientById(Client client);
+	
 	
 
 }

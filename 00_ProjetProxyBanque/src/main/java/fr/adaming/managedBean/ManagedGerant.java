@@ -140,6 +140,7 @@ public class ManagedGerant {
 	}
 	
 	public void modiferConseiller(){
+		System.out.println(conseiller.getId()+conseiller.getNom());
 		gerantService.modifierConseillerService(conseiller);
 	}
 	
@@ -158,5 +159,10 @@ public class ManagedGerant {
 		}else{
 			return "echecGerant";
 		}
+	}
+	
+	public void conseillerById(){
+		
+		conseiller = gerantService.getConseillerById(conseiller);
 	}
 }

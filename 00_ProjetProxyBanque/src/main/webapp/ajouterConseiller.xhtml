@@ -40,5 +40,47 @@
 		</p:menubar>
 
 	</h:form>
+	
+	
+	<div align="center">
+		<h:form method="post" name="for1" id="for1">
+			<fieldset style="width: 349px; height: 250px">
+				<legend>Ajouter un Conseiller</legend>
+
+				<table>
+					<tr>
+						<td>Nom</td>
+						<td><h:inputText type="text"
+								value="#{mBGerant.conseiller.nom}" /></td>
+					</tr>
+
+					<tr>
+						<td>Prenom</td>
+						<td><h:inputText type="text"
+								value="#{mBGerant.conseiller.prenom}" /></td>
+					</tr>
+
+					<tr>
+						<td>Password</td>
+						<td><h:inputText type="text"
+								value="#{mBGerant.conseiller.password}" /></td>
+					</tr>
+					<tr>
+						<td>Telephone</td>
+						<td><h:inputText type="text"
+								value="#{mBGerant.conseiller.telephone}" /></td>
+					</tr>
+
+					<tr align="center">
+						<td />
+						<td><h:commandButton type="submit" value="Ajouter Conseiller"
+								action="#{mBGerant.ajouterConseiller}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
+	
+	
 	</h:body>
 </html>

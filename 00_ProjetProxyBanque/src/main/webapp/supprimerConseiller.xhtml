@@ -39,6 +39,32 @@
 		</p:menubar>
 
 	</h:form>
+	
+<div align="center">
+		<h:form>
+			<fieldset style="width: 349px; height: 87px">
+				<legend>Supprimer un Conseiller</legend>
+				<h:messages style="color:navy" font-size="400px" position="center" />
+				<table>
+
+					<tr>
+						<td>Id du Conseiller</td>
+
+						<td><h:inputText id="id" value="#{mBGerant.conseiller.id}"
+								required="true" /></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td><h:commandButton type="submit" value="Supprimer Conseiller"
+								action="#{mBGerant.supprimerConseiller}" /></td>
+
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
+	
 
 </h:body>
 </html>

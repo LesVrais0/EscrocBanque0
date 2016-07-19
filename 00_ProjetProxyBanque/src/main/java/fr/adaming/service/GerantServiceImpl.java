@@ -50,6 +50,12 @@ public class GerantServiceImpl implements IGerantService {
 		
 		return gerantDao.verifGerant(gerant);
 	}
+
+	@Override
+	public Conseiller getConseillerById(Conseiller conseiller) {
+		
+		return gerantDao.getConseillerById(conseiller);
+	}
 	
 
 

@@ -5,35 +5,59 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-	
-	
+<h:head>
+	<title>Welcome</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="style2.css" />
+</h:head>
+
 
 <h:body>
-<h1>Page de connexion</h1>
-	<h:form method="post" name="for4" id="for4">
-		<table>
-			<tr>
-				<td>Nom</td>
-				<td><h:inputText type="text" value="#{mBConseiller.conseiller.nom}"/></td>
-			</tr>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div align="center">
+	<p>
+	<img src="1dollar-grand.jpg" alt="Tuna$$$" />
+	</p>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div align="center">
+		<h:form method="post" name="for4" id="for4">
+			<fieldset style="width: 349px; height: 130px">
+				<legend>Login</legend>
+				<table>
+					<tr>
+						<td>Nom</td>
+						<td><h:inputText type="text"
+								value="#{mBConseiller.conseiller.nom}" /></td>
+					</tr>
 
-			<tr>
-				<td>Mot de Passe</td>
-				<td><h:inputText type="password" value="#{mBConseiller.conseiller.password}" /></td>
-			</tr>
+					<tr>
+						<td>Mot de Passe</td>
+						<td><h:inputText type="password"
+								value="#{mBConseiller.conseiller.password}" /></td>
+					</tr>
 
-			<tr>
-				<td><h:commandButton type="submit" value="Se connecter" action="#{mBConseiller.LoginConseiller}" /></td>
-			</tr>
-		</table>
-	</h:form>
-
+					<tr>
+						<td><h:commandButton type="submit" value="Se connecter"
+								action="#{mBConseiller.LoginConseiller}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
-
-
-
-
-
-
-
 </html>

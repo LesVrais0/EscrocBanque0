@@ -9,41 +9,46 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-
 	<title>Supprimer un client</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="style1.css" />
 </h:head>
 
 <h:body>
 	<div align="center">
 		<h:form>
 			<p:breadCrumb>
-				<p:menuitem value="Accueil" url="presentation.xhtml"/>
+				<p:menuitem value="Accueil" url="presentation.xhtml" />
 				<p:menuitem value="Nouveau utilisateur" url="ajout.xhtml" />
 				<p:menuitem value="Modifier utilisateur" url="modifier.xhtml" />
 				<p:menuitem value="Supprimer utilisateur" url="supprimer.xhtml" />
 			</p:breadCrumb>
 		</h:form>
 	</div>
-
+	<div align="center">
 		<h:form>
-			<fieldset style="width: 349px; height: 80px">
-				<legend>Supprimer un Employé</legend>
+			<fieldset style="width: 349px; height: 87px">
+				<legend>Supprimer un Client</legend>
 				<h:messages style="color:navy" font-size="400px" position="center" />
+				<table>
 
-				<h:panelGrid columns="3">
-					
-					<h:inputText id="id" value="#{mBConseiller.client.id}"
-						required="true" />
-					<h:message for="id" style="color:red" />
+					<tr>
+						<td>id</td>
 
-				</h:panelGrid>
+						<td><h:inputText id="id" value="#{mBConseiller.client.id}"
+								required="true" /></td>
+					</tr>
 
-				<h:commandButton type="submit" value="Supprimer Client"
-					action="#{mBConseiller.supprimerClient}" />
+					<tr>
+						<td></td>
+						<td><h:commandButton type="submit" value="Supprimer Client"
+								action="#{mBConseiller.supprimerClient}" /></td>
 
+					</tr>
+				</table>
 			</fieldset>
 		</h:form>
-	
+	</div>
 </h:body>
 
 </html>

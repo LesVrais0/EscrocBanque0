@@ -146,27 +146,27 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	@Override
 	@Transactional
 	public void faireVirementDao(Compte a, Compte b, double montant) {
-		
+		System.out.println(a.getId()+b.getId());
 		Session session = sessionFactory.openSession();
 		String sql, sql1;
 		Double a1 ,b1;
 		
 		if(a.getClass().toString().contains("CompteCourant")){
 			
-			Query reqsoldea = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
-			reqsoldea.setParameter("idp", a.getId());
+			Query reqsoldea1 = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
+			reqsoldea1.setParameter("idp", a.getId());
 			
-			CompteCourant cc1 = (CompteCourant) reqsoldea.uniqueResult();
+			CompteCourant cc1 = (CompteCourant) reqsoldea1.uniqueResult();
 			a1 = cc1.getSolde() - montant;
 			
 			sql="update compteCourantEntity c set c.solde = :soldepa where c.id= :idpa";
 				
 		}else{
 			
-			Query reqsoldea = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
-			reqsoldea.setParameter("idp", a.getId());
+			Query reqsoldea2 = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
+			reqsoldea2.setParameter("idp", a.getId());
 			
-			CompteEpargne cc1 = (CompteEpargne) reqsoldea.uniqueResult();
+			CompteEpargne cc1 = (CompteEpargne) reqsoldea2.uniqueResult();
 			a1 = cc1.getSolde() - montant;
 			
 			sql="update compteEpargneEntity c set c.solde = :soldepa where c.id= :idpa";
@@ -174,10 +174,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 			
 		if(b.getClass().toString().contains("CompteCourant")){
 			
-			Query reqsoldea = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
-			reqsoldea.setParameter("idp", b.getId());
+			Query reqsoldea3 = session.createQuery("FROM compteCourantEntity c where c.id = :idp");
+			reqsoldea3.setParameter("idp", b.getId());
 			
-			CompteCourant cc2 = (CompteCourant) reqsoldea.uniqueResult();
+			CompteCourant cc2 = (CompteCourant) reqsoldea3.uniqueResult();
+			System.out.println(cc2);
 			b1 = cc2.getSolde() - montant;
 		
 			
@@ -185,10 +186,10 @@ public class ConseillerDaoImpl implements IConseillerDao {
 				
 		}else{
 			
-			Query reqsoldea = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
-			reqsoldea.setParameter("idp", b.getId());
+			Query reqsoldea4 = session.createQuery("FROM compteEpargneEntity c where c.id = :idp");
+			reqsoldea4.setParameter("idp", b.getId());
 			
-			CompteEpargne cc2 = (CompteEpargne) reqsoldea.uniqueResult();
+			CompteEpargne cc2 = (CompteEpargne) reqsoldea4.uniqueResult();
 			b1 = cc2.getSolde() - montant;
 			
 			sql1="update compteEpargneEntity c set c.solde = :soldepb where c.id= :idpb";
@@ -196,11 +197,11 @@ public class ConseillerDaoImpl implements IConseillerDao {
 		
 		
 		Query req = session.createQuery(sql);
-		req.setParameter("soldepa",a1);
+		req.setDouble("soldepa",a1);
 		req.setParameter("idpa", a.getId());
 		
 		Query req1 = session.createQuery(sql1);
-		req1.setParameter("soldepb",b1);
+		req1.setDouble("soldepb",b1);
 		req1.setParameter("idpb", b.getId());
 		
 		req.executeUpdate();

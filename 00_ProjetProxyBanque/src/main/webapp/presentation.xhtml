@@ -17,20 +17,35 @@
 
 
 <h:body>
-	<div align="center">
-		<h:form>
-			<p:breadCrumb>
-				<p:menuitem value="Accueil" url="presentation.xhtml" />
+	<h:form>
+		<p:growl id="menu" />
+
+		<p:menubar>
+			<p:submenu label="Client">
 				<p:menuitem value="Nouveau Client" url="ajout.xhtml" />
 				<p:menuitem value="Modifier Client" url="modifier.xhtml" />
 				<p:menuitem value="Supprimer Client" url="supprimer.xhtml" />
-				<p:menuitem value="Ajout Compte Courant" url="cc.xhtml" />
-				<p:menuitem value="Ajout Compte Epargne" url="ce.xhtml" />
-				<p:menuitem value="Ajout Carte" url="carte.xhtml" />
-			</p:breadCrumb>
-		</h:form>
-	</div>
-		<h1>Vos clients :</h1>
+				<p:separator />
+				<p:menuitem value="Quit" url="login.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Compte">
+				<p:menuitem value="Ajouter Compte Courant" url="ce.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="cc.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Autres Opérations Bancaires">
+				<p:menuitem value="Assigner Carte Bancaire" url="carte.xhtml" />
+				<p:menuitem value="Virements Bancaires" url="virement.xhtml" />
+			</p:submenu>
+
+			<p:menuitem value="Bonus"
+				url="https://www.youtube.com/watch?v=NLu0uhx_r5g" />
+		</p:menubar>
+
+	</h:form>
+
+	<h1>Vos clients :</h1>
 	<div align="center">
 	<br></br>
 		<table>

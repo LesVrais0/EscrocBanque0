@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>/</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="#" />
+</h:head>
+
+
+<h:body>
+	<h:form>
+		<p:growl id="menu" />
+
+		<p:menubar>
+			<p:submenu label="Client">
+				<p:menuitem value="Nouveau Client" url="ajout.xhtml" />
+				<p:menuitem value="Modifier Client" url="modifier.xhtml" />
+				<p:menuitem value="Supprimer Client" url="supprimer.xhtml" />
+				<p:separator />
+				<p:menuitem value="Quit" url="login.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Compte">
+				<p:menuitem value="Ajouter Compte Courant" url="ce.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="cc.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Autres Opérations Bancaires">
+				<p:menuitem value="Assigner Carte Bancaire" url="carte.xhtml" />
+				<p:menuitem value="Virements Bancaires" url="virement.xhtml" />
+			</p:submenu>
+
+			<p:menuitem value="Bonus"
+				url="https://www.youtube.com/watch?v=NLu0uhx_r5g" />
+		</p:menubar>
+
+	</h:form>
+	
+</h:body>
 </html>

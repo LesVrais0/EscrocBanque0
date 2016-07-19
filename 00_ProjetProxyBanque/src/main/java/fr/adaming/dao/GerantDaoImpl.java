@@ -2,6 +2,8 @@ package fr.adaming.dao;
 
 
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -100,6 +102,12 @@ Session session = sessionFactory.openSession();
 
 		session.close();
 		
+	}
+
+	@Override
+	public List<Conseiller> getAllConseiller(Gerant gerant) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

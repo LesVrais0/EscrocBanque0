@@ -14,25 +14,24 @@ public class GerantServiceImpl implements IGerantService {
 
 	@Override
 	public Gerant getGerantService(Gerant gerant) {
-		// TODO Auto-generated method stub
-		return null;
+		return gerantDao.getGerantDao(gerant);
 	}
 
 	@Override
 	public void ajouterConseillerService(Conseiller conseiller, Gerant gerant) {
-		// TODO Auto-generated method stub
+		gerantDao.ajouterConseillerDao(conseiller, gerant);
 		
 	}
 
 	@Override
 	public void modifierConseillerService(Conseiller conseiller) {
-		// TODO Auto-generated method stub
+		gerantDao.modifierConseillerDao(conseiller);
 		
 	}
 
 	@Override
 	public void supprimerConseillerService(Conseiller conseiller) {
-		// TODO Auto-generated method stub
+		gerantDao.supprimerConseillerDao(conseiller);
 		
 	}
 	

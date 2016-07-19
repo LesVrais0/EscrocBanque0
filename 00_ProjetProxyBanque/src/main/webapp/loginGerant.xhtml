@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Welcome Gerant</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="style2.css" />
+</h:head>
+
+
+<h:body>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div align="center">
+	<p>
+	<img src="1dollar-grand.jpg" alt="Tuna$$$" />
+	</p>
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<div align="center">
+		<h:form method="post" name="for4" id="for4">
+			<fieldset style="width: 349px; height: 130px">
+				<legend>Login</legend>
+				<table>
+					<tr>
+						<td>Nom</td>
+						<td><h:inputText type="text"
+								value="#{mBGerant.gerant.nom}" /></td>
+					</tr>
+
+					<tr>
+						<td>Mot de Passe</td>
+						<td><h:inputSecret type="password"
+								value="#{mBGerant.gerant.password}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:commandButton type="submit" value="Se connecter en tant que Gérant"
+								action="#{mBGerant.seConnecter}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
+</h:body>
+</html>

@@ -19,6 +19,7 @@
 		<p:growl id="menu" />
 
 		<p:menubar>
+			<p:menuitem value="Accueil" url="presentation.xhtml" />
 			<p:submenu label="Client">
 				<p:menuitem value="Nouveau Client" url="ajout.xhtml" />
 				<p:menuitem value="Modifier Client" url="modifier.xhtml" />
@@ -47,7 +48,7 @@
 		<h:form method="post" name="for1" id="for1">
 			<fieldset style="width: 349px; height: 250px">
 				<legend>Ajouter un Client</legend>
-				
+
 				<table>
 					<tr>
 						<td>Nom</td>
@@ -83,12 +84,12 @@
 					</tr>
 
 					<tr align="center">
-						<td/>
+						<td />
 						<td><h:commandButton type="submit" value="Ajouter Client"
 								action="#{mBConseiller.ajouterClient}" /></td>
 					</tr>
 				</table>
-				</fieldset>
+			</fieldset>
 		</h:form>
 	</div>
 </h:body>

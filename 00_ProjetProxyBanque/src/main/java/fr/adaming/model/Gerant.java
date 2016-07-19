@@ -86,6 +86,21 @@ public class Gerant extends Personne {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	/**
+	 * @return the agence
+	 */
+	public String getAgence() {
+		return agence;
+	}
+
+	/**
+	 * @param agence the agence to set
+	 */
+	public void setAgence(String agence) {
+		this.agence = agence;
+	}
+	
 	
 	
 }

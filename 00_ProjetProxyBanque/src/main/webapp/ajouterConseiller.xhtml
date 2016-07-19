@@ -8,15 +8,37 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="">
-	<ui:define name="header">
-	    Add your header here or delete to use the default
-	</ui:define>
-	<ui:define name="content">
-	    Add your content here or delete to use the default
-	</ui:define>
-	<ui:define name="footer">
-	    Add your footer here or delete to use the default
-	</ui:define>
-</ui:composition>
+<h:head>
+	<title>Page d'Ajout de Conseiller</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="style.css" />
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+		<p:growl id="menu" />
+
+		
+		
+		<p:menubar>
+		<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
+		
+			<p:submenu label="Conseiller">
+				<p:menuitem value="Nouveau Conseiller" url="ajouterConseiller.xhtml" />
+				<p:menuitem value="Modifier Conseiller" url="modifierConseiller.xhtml" />
+				<p:menuitem value="Supprimer Conseiller" url="supprimerConseiller.xhtml" />
+				<p:separator/>
+				<p:menuitem value="Quit" url="loginGerant.xhtml" />
+			</p:submenu>
+
+			<p:menuitem value="Audit de l'agence" url="audit.xhtml" />
+
+			<p:menuitem value="Bonus"
+				url="https://www.youtube.com/watch?v=32UGD0fV45g" />
+		</p:menubar>
+
+	</h:form>
+	</h:body>
 </html>

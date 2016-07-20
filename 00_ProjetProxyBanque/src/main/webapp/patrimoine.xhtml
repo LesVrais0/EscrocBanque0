@@ -17,30 +17,39 @@
 
 <h:body>
 
-	<h:form>
+		<h:form>
 		<p:growl id="menu" />
 		<p:menubar>
-			<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
-			<p:submenu label="Conseiller">
-				<p:menuitem value="Nouveau Conseiller" url="ajouterConseiller.xhtml" />
-				<p:menuitem value="Modifier Conseiller"
-					url="modifierConseiller.xhtml" />
-				<p:menuitem value="Supprimer Conseiller"
-					url="supprimerConseiller.xhtml" />
+			<p:menuitem value="Accueil" url="presentation.xhtml" />
+			<p:submenu label="Client">
+				<p:menuitem value="Nouveau Client" url="ajout.xhtml" />
+				<p:menuitem value="Modifier Client" url="modifier.xhtml" />
+				<p:menuitem value="Supprimer Client" url="supprimer.xhtml" />
+				<p:menuitem value="Information Complete Client"
+					url="infosClient.xhtml" />
 				<p:separator />
-				<p:menuitem value="Quit" url="loginGerant.xhtml" />
+				<p:menuitem value="Quit" url="login.xhtml" />
 			</p:submenu>
 
-			<p:menuitem value="Audit de l'agence" url="audit.xhtml" />
+			<p:submenu label="Compte">
+				<p:menuitem value="Ajouter Compte Courant" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="ce.xhtml" />
+			</p:submenu>
 
-			<p:menuitem value="Gestion de Patrimoine" url="patrimoine.xhtml" />
+			<p:submenu label="Autres Opérations Bancaires">
+				<p:menuitem value="Assigner Carte Bancaire" url="carte.xhtml" />
+				<p:menuitem value="Virements Bancaires" url="virement.xhtml" />
+			</p:submenu>
 
-			<p:menuitem value="Simulation" url="simulation.xhtml" />
+			<p:menuitem value="Simulation de Crédit" url="simulation.xhtml" />
 
+			<p:menuitem value="Gestion de patrimoine" url="patrimoine.xhtml" />
+			
 			<p:menuitem value="Bonus"
-				url="https://www.youtube.com/watch?v=32UGD0fV45g" />
+				url="https://www.youtube.com/watch?v=NLu0uhx_r5g" />
 		</p:menubar>
 	</h:form>
+
 
 </h:body>
 </html>

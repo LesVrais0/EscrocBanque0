@@ -94,4 +94,10 @@ public class ClientServiceImpl implements IClientService{
 		return clientDao.carteCompteEpagne(ce);
 	}
 
+	@Override
+	public Long verifClient(Client client) {
+		
+		return clientDao.verifClient(client);
+	}
+
 }

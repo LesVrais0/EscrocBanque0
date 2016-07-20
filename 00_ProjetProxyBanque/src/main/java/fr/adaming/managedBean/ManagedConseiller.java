@@ -274,12 +274,13 @@ public class ManagedConseiller {
 	public String modifierClient() {
 
 		String r = conseillerService.modifierClientService(client);
+		
 		listeClient = conseillerService.getAllClientsService(conseiller);
 		return r;
 	}
 
 	public String supprimerClient() {
-		String r = conseillerService.supprimerClientService(client)
+		String r = conseillerService.supprimerClientService(client);
 		listeClient = conseillerService.getAllClientsService(conseiller);
 		return r ;
 

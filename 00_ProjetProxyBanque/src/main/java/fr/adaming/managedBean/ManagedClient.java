@@ -276,9 +276,14 @@ public class ManagedClient {
 
 	public void touteInfoClient() {
 
+		System.out.println(clientService.verifClient(client));
+		
+		if(clientService.verifClient(client)==1){
+			
 		client = conseillerService.getClientById(client);
 
 		if(client.getId()!=0){
+			
 		if (clientService.verifCCIdClient(client) == 1) {
 
 			cc = clientService.getCCClient(client);
@@ -295,6 +300,7 @@ public class ManagedClient {
 			carteCE = clientService.carteCompteEpagne(ce);
 		} else {
 			ce = null;
+		}
 		}
 		}
 	}

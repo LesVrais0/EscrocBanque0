@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14683954414600" configfile="/00_ProjetProxyBanque/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14687546024380" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14689382342460 pf14689957309760 pf14690091370720" path="/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" id="pf14687546024380" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf14689382342460 pf14689957309760 pf14690091370720" path="/*"/>
   <nodes xsi:type="pageflow:PFPage" name="login.xhtml" id="pf14688344651312" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" outlinks="pf14688344651313 pf14688344858295" inlinks="pf14688344858295" path="/login.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="presentation.xhtml" id="pf14688344651314" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14688344651313" path="/presentation.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="presentationGerant.xhtml" id="pf14689382342471" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf14689382342460 pf14689957309760" path="/presentationGerant.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="redirectionConseiller.xhtml" id="pf14690091370721" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14690091370720" path="/redirectionConseiller.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="redirectionConseiller.xhtml" id="pf14690091370721" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14690091370720" path="/presentation.xhtml"/>
   <links id="pf14688344651313" target="pf14688344651314" source="pf14688344651312" outcome="succesCo"/>
   <links id="pf14688344858295" target="pf14688344651312" source="pf14688344651312" outcome="echecCo"/>
   <links id="pf14689382342460" target="pf14689382342471" source="pf14687546024380" outcome="succesGerant"/>

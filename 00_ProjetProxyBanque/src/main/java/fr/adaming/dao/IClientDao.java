@@ -28,5 +28,7 @@ public interface IClientDao {
 	public String carteCompteCourant(CompteCourant cc);
 	
 	public String carteCompteEpagne(CompteEpargne ce);
+	
+	public Long verifClient(Client client);
 
 }

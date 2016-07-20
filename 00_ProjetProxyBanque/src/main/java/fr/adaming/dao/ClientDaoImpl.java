@@ -157,11 +157,11 @@ public class ClientDaoImpl implements IClientDao {
 			
 			String sql1 ="SELECT COUNT (cv) FROM carteVisaEntity cv where cv.comptesEpargnes.id = :idp";
 			
-			Query requete1 = session.createQuery(sql);
+			Query requete1 = session.createQuery(sql1);
 			
-			requete.setParameter("idp", cc.getId());
+			requete1.setParameter("idp", cc.getId());
 
-			Long t = (Long) requete.uniqueResult();
+			Long t = (Long) requete1.uniqueResult();
 			
 			if(t==1){
 				return "carteVisa";
@@ -190,9 +190,9 @@ public class ClientDaoImpl implements IClientDao {
 			
 			Query requete1 = session.createQuery(sql);
 			
-			requete.setParameter("idp", ce.getId());
+			requete1.setParameter("idp", ce.getId());
 
-			Long t = (Long) requete.uniqueResult();
+			Long t = (Long) requete1.uniqueResult();
 			
 			if(t==1){
 				return "carteVisa";
@@ -200,6 +200,20 @@ public class ClientDaoImpl implements IClientDao {
 		}
 		session.close();
 		return "null";
+	}
+	
+	public Long verifClient(Client client){
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql1 ="SELECT COUNT (cv) FROM clientEntity cv where cv.id = :idp";
+		
+		Query requete1 = session.createQuery(sql1);
+		
+		requete1.setParameter("idp", client.getId());
+
+		Long t = (Long) requete1.uniqueResult();
+		return t;
 	}
 	
 	

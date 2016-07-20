@@ -69,6 +69,141 @@ public class ClientDaoImpl implements IClientDao {
 		session.close();
 	}
 
+	public Long verifCCIdClient(Client client){
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "SELECT COUNT (ce) FROM compteCourantEntity ce where ce.clients.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", client.getId());
+
+		Long i = (Long) requete.uniqueResult();
+		
+		session.close();
+		
+		return i;
+	
+	}
+	
+	public Long verifCEIdClient(Client client){
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "SELECT COUNT (ce) FROM compteEpargneEntity ce where ce.clients.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", client.getId());
+
+		Long i = (Long) requete.uniqueResult();
+		
+		session.close();
+		
+		return i ;
+
+	}
+	
+	public CompteCourant getCCClient (Client client){
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM compteCourantEntity ce WHERE ce.clients.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", client.getId());
+
+		CompteCourant cc = (CompteCourant) requete.uniqueResult();
+		
+		session.close();
+		
+		return cc;
+		
+	}
+	
+	public CompteEpargne getCEClient (Client client){
+		
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM compteEpargneEntity ce WHERE ce.clients.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", client.getId());
+
+		CompteEpargne ce = (CompteEpargne) requete.uniqueResult();
+		
+		session.close();
+		
+		return ce;
+		
+	}
+	
+	public String carteCompteCourant(CompteCourant cc){
+		Session session = sessionFactory.openSession();
+		
+		String sql ="SELECT COUNT (cel) FROM carteElectronEntity cel where cel.comptesCourants.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", cc.getId());
+
+		Long i = (Long) requete.uniqueResult();
+		
+		if(i==1){
+			return "carteElectron";
+		}else{
+			
+			String sql1 ="SELECT COUNT (cv) FROM carteVisaEntity cv where cv.comptesEpargnes.id = :idp";
+			
+			Query requete1 = session.createQuery(sql);
+			
+			requete.setParameter("idp", cc.getId());
+
+			Long t = (Long) requete.uniqueResult();
+			
+			if(t==1){
+				return "carteVisa";
+			}			
+		}
+		session.close();
+		return "null";
+	}
+	
+	public String carteCompteEpagne(CompteEpargne ce){
+		Session session = sessionFactory.openSession();
+		
+		String sql ="SELECT COUNT (cel) FROM carteElectronEntity cel where cel.comptesEpargnes.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", ce.getId());
+
+		Long i = (Long) requete.uniqueResult();
+		
+		if(i==1){
+			return "carteElectron";
+		}else{
+			
+			String sql1 ="SELECT COUNT (cv) FROM carteVisaEntity cv where cv.comptesEpargnes.id = :idp";
+			
+			Query requete1 = session.createQuery(sql);
+			
+			requete.setParameter("idp", ce.getId());
+
+			Long t = (Long) requete.uniqueResult();
+			
+			if(t==1){
+				return "carteVisa";
+			}			
+		}
+		session.close();
+		return "null";
+	}
+	
+	
 	@Override
 	public void ajouterCarte(Map<String, Carte> mapCarte,
 			Map<String, Compte> mapCompte) {

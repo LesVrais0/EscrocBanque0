@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head></h:head>
+
+<h:body>
+
+	<div align="center">
+		<h:form method="post" name="for78" id="for7">
+			<fieldset style="width: 349px; height: 100px">
+				<legend>Chercher un Client</legend>
+				<table>
+					<tr>
+						<td>Id</td>
+						<td><h:inputText type="text" value="#{mBClient.client.id}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton type="submit" value="Cherche Client"
+								action="#{mBClient.touteInfoClient}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
+
+
+	<table>
+		<tr>
+			<td>Nom</td>
+			<td>#{mBClient.client.nom}</td>
+		</tr>
+
+		<tr>
+			<td>Prenom</td>
+			<td>#{mBClient.client.prenom}</td>
+		</tr>
+
+		<tr>
+			<td>Telephone</td>
+			<td>#{mBClient.client.telephone}</td>
+		</tr>
+
+		<tr>
+			<td>Adresse</td>
+			<td>#{mBClient.client.adresse}</td>
+		</tr>
+
+		<tr>
+			<td>Ville</td>
+			<td>#{mBClient.client.ville}</td>
+		</tr>
+
+		<tr>
+			<td>Code Postal</td>
+			<td>#{mBClient.client.codePostal}</td>
+		</tr>
+	</table>
+
+
+	<table>
+		<thead>Compte Courant</thead>
+		<tr>
+			<td>Numero de compte</td>
+			<td>#{mBClient.cc.id}</td>
+		</tr>
+
+		<tr>
+			<td>Solde</td>
+			<td>#{mBClient.cc.solde}</td>
+		</tr>
+		
+		<tr>
+			<td>Decouvert Autorisé</td>
+			<td>#{mBClient.cc.decouvertAutorisé}</td>
+		</tr>
+
+		<tr>
+			<td>Carte</td>
+			<td>#{mBClient.carteCC}</td>
+		</tr>
+	</table>
+	
+		<table>
+		<thead>Compte Epargne</thead>
+		<tr>
+			<td>Numero de compte</td>
+			<td>#{mBClient.ce.id}</td>
+		</tr>
+
+		<tr>
+			<td>Solde</td>
+			<td>#{mBClient.ce.solde}</td>
+		</tr>
+		
+		<tr>
+			<td>Taux remunération</td>
+			<td>#{mBClient.ce.tauxRemuneration}</td>
+		</tr>
+
+		<tr>
+			<td>Carte</td>
+			<td>#{mBClient.carteCE}</td>
+		</tr>
+	</table>
+
+
+</h:body>
+</html>

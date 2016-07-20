@@ -16,5 +16,17 @@ public interface IClientDao {
 	public void ajouterCEDao(CompteEpargne ce, Client client);
 	
 	public void ajouterCarte(Map<String , Carte> mapCarte,Map<String , Compte> mapCompte);
+	
+	public Long verifCCIdClient(Client client);
+	
+	public Long verifCEIdClient(Client client);
+	
+	public CompteCourant getCCClient (Client client);
+	
+	public CompteEpargne getCEClient (Client client);
+	
+	public String carteCompteCourant(CompteCourant cc);
+	
+	public String carteCompteEpagne(CompteEpargne ce);
 
 }

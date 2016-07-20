@@ -37,13 +37,16 @@ public class ClientServiceImpl implements IClientService{
 
 	@Override
 	public void ajouterCCService(CompteCourant cc, Client client) {
-		clientDao.ajouterCCDao(cc, client);
+		
+		if(clientDao.verifCCIdClient(client)==0){
+		clientDao.ajouterCCDao(cc, client);}
 		
 	}
 
 	@Override
 	public void ajouterCEService(CompteEpargne ce, Client client) {
-		clientDao.ajouterCEDao(ce, client);
+		if(clientDao.verifCEIdClient(client)==0){
+		clientDao.ajouterCEDao(ce, client);}
 		
 	}
 
@@ -53,6 +56,42 @@ public class ClientServiceImpl implements IClientService{
 		
 		clientDao.ajouterCarte(mapCarte, mapCompte);
 		
+	}
+
+	@Override
+	public Long verifCCIdClient(Client client) {
+		
+		return clientDao.verifCCIdClient(client);
+	}
+
+	@Override
+	public Long verifCEIdClient(Client client) {
+		
+		return clientDao.verifCEIdClient(client);
+	}
+
+	@Override
+	public CompteCourant getCCClient(Client client) {
+		
+		return clientDao.getCCClient(client);
+	}
+
+	@Override
+	public CompteEpargne getCEClient(Client client) {
+		
+		return clientDao.getCEClient(client);
+	}
+
+	@Override
+	public String carteCompteCourant(CompteCourant cc) {
+		
+		return clientDao.carteCompteCourant(cc);
+	}
+
+	@Override
+	public String carteCompteEpagne(CompteEpargne ce) {
+		
+		return clientDao.carteCompteEpagne(ce);
 	}
 
 }

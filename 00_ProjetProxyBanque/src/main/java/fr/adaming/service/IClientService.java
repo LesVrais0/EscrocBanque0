@@ -17,5 +17,17 @@ public interface IClientService {
 	
 	public void ajouterCarteService(Map<String , Carte> mapCarte,Map<String , Compte> mapCompte);
 
+	public Long verifCCIdClient(Client client);
+	
+	public Long verifCEIdClient(Client client);
+	
+	public CompteCourant getCCClient (Client client);
+	
+	public CompteEpargne getCEClient (Client client);
+	
+	public String carteCompteCourant(CompteCourant cc);
+	
+	public String carteCompteEpagne(CompteEpargne ce);
+
 	
 }

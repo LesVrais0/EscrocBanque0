@@ -135,17 +135,23 @@ public class ManagedGerant {
 		listeCon = gerantService.getAllConseiller(gerant);
 	}
 	
-	public void ajouterConseiller(){
+	public String ajouterConseiller(){
 		gerantService.ajouterConseillerService(conseiller, gerant);
+		listeCon = gerantService.getAllConseiller(gerant);
+		return "succesGerant";
 	}
 	
-	public void modiferConseiller(){
+	public String modiferConseiller(){
 		System.out.println(conseiller.getId()+conseiller.getNom());
 		gerantService.modifierConseillerService(conseiller);
+		listeCon = gerantService.getAllConseiller(gerant);
+		return "succesGerant";
 	}
 	
-	public void supprimerConseiller(){
+	public String supprimerConseiller(){
 		gerantService.supprimerConseillerService(conseiller);
+		listeCon = gerantService.getAllConseiller(gerant);
+		return "succesGerant";
 	}
 	
 	public String seConnecter(){

@@ -263,18 +263,25 @@ public class ManagedConseiller {
 
 	public String ajouterClient() {
 
-		return conseillerService.ajouterClientService(client, conseiller);
+		String r = conseillerService.ajouterClientService(client, conseiller);
+		
+		listeClient = conseillerService.getAllClientsService(conseiller);
+		
+		return r;
 
 	}
 
 	public String modifierClient() {
 
-		return conseillerService.modifierClientService(client);
+		String r = conseillerService.modifierClientService(client);
+		listeClient = conseillerService.getAllClientsService(conseiller);
+		return r;
 	}
 
 	public String supprimerClient() {
-
-		return conseillerService.supprimerClientService(client);
+		String r = conseillerService.supprimerClientService(client)
+		listeClient = conseillerService.getAllClientsService(conseiller);
+		return r ;
 
 	}
 
@@ -304,20 +311,22 @@ public class ManagedConseiller {
 		}
 	}
 
-	public void ajouterCompteCourant() {
+	public String ajouterCompteCourant() {
 		Date date = new Date();
 		cc.setDateOuverture(date);
 		clientService.ajouterCCService(cc, client);
+		return "succes";
 
 	}
 
-	public void ajouterCompteEpargne() {
+	public String ajouterCompteEpargne() {
 		Date date = new Date();
 		ce.setDateOuverture(date);
 		clientService.ajouterCEService(ce, client);
+		return"succes";
 	}
 
-	public void faireVirement() {
+	public String faireVirement() {
 		System.out.println(type[0]+type2[0]);
 
 		if (type[0].contains("CompteCourant")) {
@@ -339,6 +348,7 @@ public class ManagedConseiller {
 		
 		conseillerService.faireVirementService(cd, ca, montant);
 
+		return "succes";
 	}
 	
 	public void getClientId(){

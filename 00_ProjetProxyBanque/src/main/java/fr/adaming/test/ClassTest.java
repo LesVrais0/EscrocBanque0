@@ -13,12 +13,12 @@ import fr.adaming.model.Compte;
 import fr.adaming.model.CompteCourant;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
-import fr.adaming.model.Varia;
+
 import fr.adaming.service.ConseillerServiceImpl;
 import fr.adaming.service.GerantServiceImpl;
 import fr.adaming.service.IConseillerService;
 import fr.adaming.service.IGerantService;
-import fr.adaming.service.WebService;
+
 
 public class ClassTest {
 	
@@ -45,12 +45,12 @@ public class ClassTest {
 //		Date date= new Date();
 //		System.out.println(date);
 		
-		WebService w = new WebService();
-		
-		String v = w.webSer();
-		
-		System.out.println(v);
-		
+//		WebService w = new WebService();
+//		
+//		String v = w.webSer();
+//		
+//		System.out.println(v);
+//		
 		
 	}
 

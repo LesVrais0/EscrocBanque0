@@ -237,7 +237,7 @@ public class ManagedClient {
 		this.conseillerService = conseillerService;
 	}
 
-	public void ajouterCarte() {
+	public String ajouterCarte() {
 
 		System.out
 				.println("Type de carte"
@@ -270,6 +270,8 @@ public class ManagedClient {
 
 		System.out
 				.println("ARPES METHODE DAO==============================================================================");
+		
+		return "succes";
 	}
 
 	public void touteInfoClient() {

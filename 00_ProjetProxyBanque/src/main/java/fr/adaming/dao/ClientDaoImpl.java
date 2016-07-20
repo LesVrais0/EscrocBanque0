@@ -47,7 +47,6 @@ public class ClientDaoImpl implements IClientDao {
 		requete.executeUpdate();
 
 		session.close();
-
 	}
 
 	@Override

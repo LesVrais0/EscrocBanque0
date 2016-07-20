@@ -7,9 +7,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>/</title>
+	<title>Compte Courant</title>
 	<link rel="stylesheet" media="screen" type="text/css" title="Design"
-		href="#" />
+		href="style1.css" />
 </h:head>
 
 
@@ -42,6 +42,65 @@
 		</p:menubar>
 
 	</h:form>
+	<br/>
+	<br/>
+	<br/>
+	<div class="tableaux" align="center">
+		<h:form method="post" name="for8" id="for8">
+		<fieldset style="width: 349px; height: 170px">
+				<legend>Choix du client</legend>
+			<table>
+				<tr>
+					<td>nom</td>
+					<td><h:inputText type="text"
+							value="#{mBConseiller.client.nom}" /></td>
+				</tr>
 
+				<tr>
+					<td>prenom</td>
+					<td><h:inputText type="text"
+							value="#{mBConseiller.client.prenom}" /></td>
+				</tr>
+
+
+				<tr>
+					<td>ville</td>
+					<td><h:inputText type="text"
+							value="#{mBConseiller.client.ville}" /></td>
+				</tr>
+				<tr>
+					<td><h:commandButton type="submit" value="LIRE CLIENT"
+							action="#{mBConseiller.lireClient}" /></td>
+				</tr>
+			</table>
+			</fieldset>
+		</h:form>
+	</div>
+	<div class="tableaux1" align="center">
+		<h:form method="post">
+		<fieldset style="width: 349px; height: 170px">
+				<legend>Ajouter un Client</legend>
+			<table>
+				<tr>
+					<td>solde</td>
+					<td><h:inputText type="text" value="#{mBConseiller.cc.solde}" /></td>
+				</tr>
+
+				<tr>
+					<td>decouvert autorise</td>
+					<td><h:inputText type="text"
+							value="#{mBConseiller.cc.decouvertAutorisé}" /></td>
+				</tr>
+
+				<tr>
+					<td><h:commandButton type="submit"
+							value="Ajouter Compte Courant"
+							action="#{mBConseiller.ajouterCompteCourant}" /></td>
+				</tr>
+
+			</table>
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
 </html>

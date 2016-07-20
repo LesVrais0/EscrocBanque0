@@ -1,5 +1,19 @@
 @CHARSET "ISO-8859-1";
 
+.tableaux1{
+  display:inline-block;
+  vertical-align:top;
+  position: absolute;
+  right: 15%;
+}
+.tableaux{
+  display:inline-block;
+  vertical-align:top;
+  position: absolute;
+  left: 15%;
+}
+
+
 table {
 
 background-color:#D0E3FA;

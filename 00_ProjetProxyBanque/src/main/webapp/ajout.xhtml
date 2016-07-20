@@ -13,8 +13,7 @@
 	<title>Ajouter un client</title>
 	<link rel="stylesheet" media="screen" type="text/css" title="Design"
 		href="style1.css" />
-		<link rel="stylesheet" media="screen" type="text/css" title="Design"
-		href="style.css" />
+		
 </h:head>
 
 <h:body>
@@ -47,37 +46,6 @@
 
 	</h:form>
 	
-	<h1>Vos clients :</h1>
-	<div align="center">
-	<br></br>
-		<table>
-			<thead>
-				<tr>
-					<td>Id</td>
-					<td>Nom</td>
-					<td>Prénom</td>
-					<td>Téléphone</td>
-					<td>Adresse</td>
-					<td>Code Postal</td>
-					<td>Ville</td>
-				</tr>
-			</thead>
-
-			<!-- Boucle for each utilisant "core" on recupere l'attribut Liste de la requete qui nous a mené sur la page -->
-			<c:forEach var="client" items="#{mBConseiller.listeClient}" id="table1">
-				<tr>
-					<!-- On recupere direct les valeurs contenu dans la liste de données (et non d'objet) et on les afficges avec c:out -->
-					<td><h:outputText value="#{client.id}"></h:outputText></td>
-					<td><h:outputText value="#{client.nom}"></h:outputText></td>
-					<td><h:outputText value="#{client.prenom}"></h:outputText></td>
-					<td><h:outputText value="#{client.telephone}"></h:outputText></td>
-					<td><h:outputText value="#{client.adresse}"></h:outputText></td>
-					<td><h:outputText value="#{client.codePostal}"></h:outputText></td>
-					<td><h:outputText value="#{client.ville}"></h:outputText></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
 
 	<div id="ajouter" align="center">
 		<h:form method="post" name="for1" id="for1">

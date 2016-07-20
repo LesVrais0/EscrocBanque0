@@ -1,48 +1,52 @@
 @CHARSET "ISO-8859-1";
 
-.tableaux1{
-  display:inline-block;
-  vertical-align:top;
-  position: absolute;
-  right: 15%;
-}
-.tableaux{
-  display:inline-block;
-  vertical-align:top;
-  position: absolute;
-  left: 15%;
+
+
+.tableaux2 {
+	position: absolute;
+	left: 40%;
 }
 
+.tableaux1 {
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	right: 15%;
+}
+
+.tableaux {
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	left: 15%;
+}
 
 table {
-
-background-color:#D0E3FA;
-border:1px solid #D0E3FA;
+	background-color: #D0E3FA;
+	border: 1px solid #D0E3FA;
 }
 
 tbody {
-background-color:#FFFFFF;
-border:1px solid #6495ed;
+	background-color: #FFFFFF;
+	border: 1px solid #6495ed;
 }
 
 caption {
-font-family:sans-serif;
+	font-family: sans-serif;
 }
 
 fieldset {
-background-color:#D0E3FA;
-border:1px solid #6495ed;
-	
+	background-color: #D0E3FA;
+	border: 1px solid #6495ed;
 }
-legend {
-font-size:24px;
-font-weight: bold;
-font-family: "Times new roman",times, sans-serif;
 
+legend {
+	font-size: 24px;
+	font-weight: bold;
+	font-family: "Times new roman", times, sans-serif;
 }
-thead, tfoot, th, td, tr{
-background-color:#D0E3FA;
-border:1px solid #D0E3FA;
-	
-	
+
+thead, tfoot, th, td, tr {
+	background-color: #D0E3FA;
+	border: 1px solid #D0E3FA;
 }

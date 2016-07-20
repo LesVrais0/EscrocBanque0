@@ -7,12 +7,12 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>/</title>
+	<title>Ajout d'une carte</title>
 	<link rel="stylesheet" media="screen" type="text/css" title="Design"
-		href="#" />
+		href="style1.css" />
 </h:head>
 <h:body>
-<h:form>
+	<h:form>
 		<p:growl id="menu" />
 
 		<p:menubar>
@@ -26,8 +26,8 @@
 			</p:submenu>
 
 			<p:submenu label="Compte">
-				<p:menuitem value="Ajouter Compte Courant" url="ce.xhtml" />
-				<p:menuitem value="Ajouter Compte Epargne" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Courant" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="ce.xhtml" />
 			</p:submenu>
 
 			<p:submenu label="Autres Opérations Bancaires">
@@ -40,5 +40,34 @@
 		</p:menubar>
 
 	</h:form>
+	<div class="tableaux2">
+		<h:form method="post">
+			<fieldset style="width: 349px; height: 170px">
+				<legend>Choix du client</legend>
+				<table>
+					<tr>
+						<h:selectManyCheckbox value="#{mBClient.carte}">
+							<f:selectItem itemValue="Visa" itemLabel="Carte Visa" />
+							<f:selectItem itemValue="Electron" itemLabel="Carte Electron" />
+						</h:selectManyCheckbox>
+
+						<h:selectManyCheckbox value="#{mBClient.compte}">
+							<f:selectItem itemValue="Epargne" itemLabel="Compte Epargne" />
+							<f:selectItem itemValue="Courant" itemLabel="Compte Courant" />
+						</h:selectManyCheckbox>
+					</tr>
+					<tr>
+						<td>Numéro de compte</td>
+						<td><h:inputText type="text" value="#{mBClient.idtempo}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton type="submit"
+								value="Relier une carte à un compte"
+								action="#{mBClient.ajouterCarte}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
 </html>

@@ -7,9 +7,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>/</title>
+	<title>Virement</title>
 	<link rel="stylesheet" media="screen" type="text/css" title="Design"
-		href="#" />
+		href="style1.css" />
 </h:head>
 
 
@@ -28,8 +28,8 @@
 			</p:submenu>
 
 			<p:submenu label="Compte">
-				<p:menuitem value="Ajouter Compte Courant" url="ce.xhtml" />
-				<p:menuitem value="Ajouter Compte Epargne" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Courant" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="ce.xhtml" />
 			</p:submenu>
 
 			<p:submenu label="Autres Opérations Bancaires">
@@ -42,6 +42,46 @@
 		</p:menubar>
 
 	</h:form>
-	
+	<div align="center">
+		<h:form method="post">
+			<fieldset style="width: 349px; height: 215px">
+				<legend>Choix du client</legend>
+				<table>
+					<tr>
+						<td>Compte de départ</td>
+						<td><h:selectManyCheckbox value="#{mBConseiller.type}">
+								<f:selectItem itemValue="CompteCourant"
+									itemLabel="Compte Courant" />
+								<f:selectItem itemValue="CompteEpargne"
+									itemLabel="Compte Epargne" />
+							</h:selectManyCheckbox></td>
+						<td><h:inputText type="text" value="#{mBConseiller.iddp}" /></td>
+					</tr>
+
+					<tr>
+
+						<td>Compte d'arrive</td>
+						<td><h:selectManyCheckbox value="#{mBConseiller.type2}">
+								<f:selectItem itemValue="CompteCourant"
+									itemLabel="Compte Courant" />
+								<f:selectItem itemValue="CompteEpargne"
+									itemLabel="Compte Epargne" />
+							</h:selectManyCheckbox></td>
+						<td><h:inputText type="text" value="#{mBConseiller.idar}" /></td>
+					</tr>
+
+					<tr>
+						<td>Valeur du montant</td>
+						<td><h:inputText type="text" value="#{mBConseiller.montant}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton type="submit" value="Faire un virement"
+								action="#{mBConseiller.faireVirement}" /></td>
+					</tr>
+
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
 </html>

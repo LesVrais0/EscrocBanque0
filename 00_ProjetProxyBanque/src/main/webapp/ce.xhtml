@@ -7,9 +7,9 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>/</title>
+	<title>Compte Epargne</title>
 	<link rel="stylesheet" media="screen" type="text/css" title="Design"
-		href="#" />
+		href="style1.css" />
 </h:head>
 
 
@@ -28,8 +28,8 @@
 			</p:submenu>
 
 			<p:submenu label="Compte">
-				<p:menuitem value="Ajouter Compte Courant" url="ce.xhtml" />
-				<p:menuitem value="Ajouter Compte Epargne" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Courant" url="cc.xhtml" />
+				<p:menuitem value="Ajouter Compte Epargne" url="ce.xhtml" />
 			</p:submenu>
 
 			<p:submenu label="Autres Opérations Bancaires">
@@ -42,6 +42,64 @@
 		</p:menubar>
 
 	</h:form>
-	
+	<br />
+	<br />
+	<br />
+	<div class="tableaux" align="center">
+		<h:form method="post" name="for8" id="for8">
+			<fieldset style="width: 349px; height: 170px">
+				<legend>Choix du client</legend>
+				<table>
+					<tr>
+						<td>nom</td>
+						<td><h:inputText type="text"
+								value="#{mBConseiller.client.nom}" /></td>
+					</tr>
+
+					<tr>
+						<td>prenom</td>
+						<td><h:inputText type="text"
+								value="#{mBConseiller.client.prenom}" /></td>
+					</tr>
+
+
+					<tr>
+						<td>ville</td>
+						<td><h:inputText type="text"
+								value="#{mBConseiller.client.ville}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton type="submit" value="LIRE CLIENT"
+								action="#{mBConseiller.lireClient}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
+	<div class="tableaux1" align="center">
+		<h:form method="post">
+			<fieldset style="width: 349px; height: 120px">
+				<legend>Ajout du Compte Epargne</legend>
+				<table>
+					<tr>
+						<td>Solde</td>
+						<td><h:inputText type="text" value="#{mBConseiller.ce.solde}" /></td>
+					</tr>
+
+
+					<tr>
+						<td>Taux</td>
+						<td><h:inputText type="text"
+								value="#{mBConseiller.ce.tauxRemuneration}" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton type="submit"
+								value="Ajouter Compte Epargne"
+								action="#{mBConseiller.ajouterCompteEpargne}" /></td>
+					</tr>
+				</table>
+			</fieldset>
+		</h:form>
+	</div>
 </h:body>
 </html>

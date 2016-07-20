@@ -21,8 +21,12 @@ public class ConseillerServiceImpl implements IConseillerService {
 	@Override
 	public String ajouterClientService(Client client, Conseiller conseiller) {
 		
-		conseillerDao.ajouterClientDao(client,conseiller);
+		if(conseillerDao.getAllClientsDao(conseiller).size()<10){
+			conseillerDao.ajouterClientDao(client,conseiller);
+		}
+		
 		return "succes";
+		
 	}
 
 	@Override

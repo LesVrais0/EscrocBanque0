@@ -13,10 +13,12 @@ import fr.adaming.model.Compte;
 import fr.adaming.model.CompteCourant;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
+import fr.adaming.model.Varia;
 import fr.adaming.service.ConseillerServiceImpl;
 import fr.adaming.service.GerantServiceImpl;
 import fr.adaming.service.IConseillerService;
 import fr.adaming.service.IGerantService;
+import fr.adaming.service.WebService;
 
 public class ClassTest {
 	
@@ -33,15 +35,22 @@ public class ClassTest {
 //		System.out.println(mapCarte.get("CarteVisa"));
 		
 
-		CompteCourant cc = new CompteCourant( 215.25);
-		cc.setSolde(125);
+//		CompteCourant cc = new CompteCourant( 215.25);
+//		cc.setSolde(125);
+//		
+//		S s = new S();
+//		
+//		s.aff(cc);
+//		
+//		Date date= new Date();
+//		System.out.println(date);
 		
-		S s = new S();
+		WebService w = new WebService();
 		
-		s.aff(cc);
+		String v = w.webSer();
 		
-		Date date= new Date();
-		System.out.println(date);
+		System.out.println(v);
+		
 		
 	}
 

@@ -19,28 +19,30 @@
 
 	<h:form>
 		<p:growl id="menu" />
-
-		
-		
 		<p:menubar>
-		<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
+			<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
 			<p:submenu label="Conseiller">
 				<p:menuitem value="Nouveau Conseiller" url="ajouterConseiller.xhtml" />
-				<p:menuitem value="Modifier Conseiller" url="modifierConseiller.xhtml" />
-				<p:menuitem value="Supprimer Conseiller" url="supprimerConseiller.xhtml" />
-				<p:separator/>
+				<p:menuitem value="Modifier Conseiller"
+					url="modifierConseiller.xhtml" />
+				<p:menuitem value="Supprimer Conseiller"
+					url="supprimerConseiller.xhtml" />
+				<p:separator />
 				<p:menuitem value="Quit" url="loginGerant.xhtml" />
 			</p:submenu>
 
 			<p:menuitem value="Audit de l'agence" url="audit.xhtml" />
 
+			<p:menuitem value="Gestion de Patrimoine" url="patrimoine.xhtml" />
+
+			<p:menuitem value="Simulation" url="simulation.xhtml" />
+
 			<p:menuitem value="Bonus"
 				url="https://www.youtube.com/watch?v=32UGD0fV45g" />
 		</p:menubar>
-
 	</h:form>
-	
-<div align="center">
+
+	<div align="center">
 		<h:form>
 			<fieldset style="width: 349px; height: 87px">
 				<legend>Supprimer un Conseiller</legend>
@@ -56,7 +58,8 @@
 
 					<tr>
 						<td></td>
-						<td><h:commandButton type="submit" value="Supprimer Conseiller"
+						<td><h:commandButton type="submit"
+								value="Supprimer Conseiller"
 								action="#{mBGerant.supprimerConseiller}" /></td>
 
 					</tr>
@@ -64,7 +67,7 @@
 			</fieldset>
 		</h:form>
 	</div>
-	
+
 
 </h:body>
 </html>

@@ -22,9 +22,9 @@
 	<br />
 	<br />
 	<div align="center">
-	<p>
-	<img src="1dollar-grand.jpg" alt="Tuna$$$" />
-	</p>
+		<p>
+			<img src="1dollar-grand.jpg" alt="Tuna$$$" />
+		</p>
 	</div>
 	<br />
 	<br />
@@ -42,8 +42,7 @@
 				<table>
 					<tr>
 						<td>Nom</td>
-						<td><h:inputText type="text"
-								value="#{mBGerant.gerant.nom}" /></td>
+						<td><h:inputText type="text" value="#{mBGerant.gerant.nom}" /></td>
 					</tr>
 
 					<tr>
@@ -53,8 +52,11 @@
 					</tr>
 
 					<tr>
-						<td><h:commandButton type="submit" value="Se connecter en tant que Gérant"
+						<td><h:commandButton type="submit"
+								value="Se connecter en tant que Gérant"
 								action="#{mBGerant.seConnecter}" /></td>
+						<td><input type="button" name="lien1" value="Portail Conseiller"
+							onclick="self.location.href='login.xhtml'" /></td>
 					</tr>
 				</table>
 			</fieldset>

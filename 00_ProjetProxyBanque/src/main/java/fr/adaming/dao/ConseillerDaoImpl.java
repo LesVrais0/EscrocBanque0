@@ -94,12 +94,13 @@ public class ConseillerDaoImpl implements IConseillerDao {
 	public void supprimerClientDao(Client client) {
 		Session session = sessionFactory.openSession();
 
-		String requete = "DELETE FROM clientEntity ce where id= :idp";
+		String requete = "DELETE FROM clientEntity ce WHERE id= :idp";
 
 		Query query = session.createSQLQuery(requete);
-		query.setParameter("idp",client.getId());
+		query.setInteger("idp",client.getId());
 		query.executeUpdate();
 		session.close();
+		
 	}
 
 	@Override

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Page pour supprimer un Conseiller</title>
+	<link rel="stylesheet" media="screen" type="text/css" title="Design"
+		href="style1.css" />
+</h:head>
+
+
+<h:body>
+
+	<h:form>
+		<p:growl id="menu" />
+		<p:menubar>
+			<p:menuitem value="Accueil" url="presentationGerant.xhtml" />
+			<p:submenu label="Conseiller">
+				<p:menuitem value="Nouveau Conseiller" url="ajouterConseiller.xhtml" />
+				<p:menuitem value="Modifier Conseiller"
+					url="modifierConseiller.xhtml" />
+				<p:menuitem value="Supprimer Conseiller"
+					url="supprimerConseiller.xhtml" />
+				<p:separator />
+				<p:menuitem value="Quit" url="loginGerant.xhtml" />
+			</p:submenu>
+
+			<p:menuitem value="Audit de l'agence" url="audit.xhtml" />
+
+			<p:menuitem value="Gestion de Patrimoine" url="patrimoine.xhtml" />
+
+			<p:menuitem value="Simulation" url="simulation.xhtml" />
+
+			<p:menuitem value="Bonus"
+				url="https://www.youtube.com/watch?v=32UGD0fV45g" />
+		</p:menubar>
+	</h:form>
+
+</h:body>
+</html>

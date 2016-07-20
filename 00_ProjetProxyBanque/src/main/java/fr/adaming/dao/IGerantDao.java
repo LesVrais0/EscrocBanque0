@@ -19,4 +19,6 @@ public interface IGerantDao {
 	public List<Conseiller> getAllConseiller(Gerant gerant);
 	
 	public Long verifGerant(Gerant gerant);
+	
+	public Conseiller getConseillerById(Conseiller conseiller);
 }

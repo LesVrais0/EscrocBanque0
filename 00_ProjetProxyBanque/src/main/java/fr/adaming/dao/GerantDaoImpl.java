@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.adaming.model.Client;
 import fr.adaming.model.Conseiller;
 import fr.adaming.model.Gerant;
 
@@ -51,7 +52,7 @@ public class GerantDaoImpl implements IGerantDao {
 	public void ajouterConseillerDao(Conseiller conseiller, Gerant gerant) {
 		Session session = sessionFactory.openSession();
 		
-		String sql ="insert into agents (nom,prenom,telephone,password,gerant_id_fk) values (?,?,?,?,?)";
+		String sql ="insert into conseillers (nom,prenom,telephone,password,gerant_id_fk) values (?,?,?,?,?)";
 		
 		Query requete = session.createSQLQuery(sql);
 		
@@ -71,11 +72,11 @@ public class GerantDaoImpl implements IGerantDao {
 	public void modifierConseillerDao(Conseiller conseiller) {
 			Session session = sessionFactory.openSession();
 		
-		String sql ="update conseillerEntity ce set"
+		String sql ="update conseillerEntity ce set "
 				+ "ce.nom = :nomp , "
 				+ "ce.prenom = :prenomp , "
 				+ "ce.telephone = :telephonep , "
-				+ "ce.password = :passwordp where"
+				+ "ce.password = :passwordp where "
 				+ "ce.id = :idp";
 		
 		Query requete = session.createQuery(sql);
@@ -95,12 +96,14 @@ public class GerantDaoImpl implements IGerantDao {
 	public void supprimerConseillerDao(Conseiller conseiller) {
 		Session session = sessionFactory.openSession();
 
-		String requete = "DELETE FROM conseillers where id=?";
+		String requete = "DELETE FROM conseillerEntity c where c.id= :idp";
 
-		Query query = session.createSQLQuery(requete);
+		Query query = session.createQuery(requete);
 
-		query.setParameter(0, conseiller.getId());
-
+		query.setParameter("idp", conseiller.getId());
+		
+		query.executeUpdate();
+		
 		session.close();
 		
 	}
@@ -145,6 +148,23 @@ public class GerantDaoImpl implements IGerantDao {
 		session.close();
 		
 		return i;
+	}
+
+	@Override
+	public Conseiller getConseillerById(Conseiller conseiller) {
+		Session session = sessionFactory.openSession();
+		
+		String sql = "FROM conseillerEntity ce WHERE ce.id = :idp";
+		
+		Query requete = session.createQuery(sql);
+		
+		requete.setParameter("idp", conseiller.getId());
+
+		Conseiller cl = (Conseiller) requete.uniqueResult();
+		
+		session.close();
+		
+		return cl;
 	}
 
 }

@@ -75,5 +75,6 @@ public class ConseillerServiceImpl implements IConseillerService {
 		return conseillerDao.getClientById(client);
 	}
 	
+	
 
 }
